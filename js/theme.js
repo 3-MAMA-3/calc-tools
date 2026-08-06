@@ -26,7 +26,7 @@
     try { localStorage.setItem("theme", stored); } catch (e) {}
     if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
       root.classList.add("theme-fade");
-      setTimeout(function () { root.classList.remove("theme-fade"); }, 520);
+      setTimeout(function () { root.classList.remove("theme-fade"); }, 720);
     }
     sync();
   });

@@ -120,7 +120,7 @@ function buildPage(c) {
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
       <p class="share"><span data-i18n="share.label">Shareable result link:</span></p>
-      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url" data-i18n="share.copy">Copy</button></div>
+      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url"><span data-i18n="share.copy">Copy</span><span class="alt"></span></button></div>
     </div>
 
     <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
@@ -130,7 +130,7 @@ function buildPage(c) {
 
     <div class="faq">
       <h2 data-i18n="calc.${c.slug}.ft">${esc(c.toolName.charAt(0).toUpperCase() + c.toolName.slice(1))} FAQ</h2>
-      ${c.faqs.map((f, i) => `<details><summary data-i18n="calc.${c.slug}.faqs.${i}.q">${esc(f.q)}</summary><p data-i18n="calc.${c.slug}.faqs.${i}.a">${esc(f.a)}</p></details>`).join("\n      ")}
+      ${c.faqs.map((f, i) => `<details><summary data-i18n="calc.${c.slug}.faqs.${i}.q">${esc(f.q)}</summary><div class="faq-body"><p data-i18n="calc.${c.slug}.faqs.${i}.a">${esc(f.a)}</p></div></details>`).join("\n      ")}
     </div>
 
     <div class="affiliate-box">

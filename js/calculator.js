@@ -168,10 +168,11 @@
     if (t && t.classList.contains("copy-url") && shareEl) {
       shareEl.select();
       document.execCommand("copy");
-      var copyTxt = T ? T.t("share.copy") : "Copy";
       var copiedTxt = T ? T.t("share.copied") : "Copied!";
-      t.textContent = copiedTxt;
-      setTimeout(function () { t.textContent = copyTxt; }, 1500);
+      var alt = t.querySelector(".alt");
+      if (alt) alt.textContent = copiedTxt;
+      t.classList.add("copied");
+      setTimeout(function () { t.classList.remove("copied"); }, 1600);
     }
   });
 })();

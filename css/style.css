@@ -41,6 +41,9 @@ html.dark {
 html.theme-fade, html.theme-fade * {
   transition: background-color 0.45s var(--ease), color 0.45s var(--ease), border-color 0.45s var(--ease), box-shadow 0.45s var(--ease), fill 0.45s var(--ease), stroke 0.45s var(--ease) !important;
 }
+html.theme-fade .tgl { transition: transform 0.6s var(--ease) !important; }
+html.theme-fade .icon-sun { transition: opacity 0.2s ease 0.26s !important; }
+html.theme-fade .icon-moon { transition: opacity 0.2s ease !important; }
 * { box-sizing: border-box; }
 html { background: var(--bg); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scrollbar-width: thin; scrollbar-color: #c7c7cc transparent; }
 html.lenis, html.lenis body { height: auto; }
@@ -286,6 +289,11 @@ p.lead { color: var(--muted); margin: 0 0 22px; font-size: 1.1rem; }
   min-width: 0;
 }
 .share-row input:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+.copy-url { position: relative; }
+.copy-url > span { display: inline-block; transition: opacity 0.25s var(--ease), transform 0.25s var(--ease); }
+.copy-url .alt { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(10px); }
+.copy-url.copied > span[data-i18n] { opacity: 0; transform: translateY(-10px); }
+.copy-url.copied .alt { opacity: 1; transform: translateY(0); }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -405,7 +413,14 @@ html.dark .ad-slot { background: repeating-linear-gradient(45deg, #151517, #1515
 }
 .faq details:hover summary::before { color: var(--accent); }
 .faq details[open] summary::before { transform: rotate(45deg); background: var(--accent); color: #fff; }
-.faq p { margin: 10px 0 0 34px; font-size: 0.94rem; color: var(--muted); }
+.faq .faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding-top: 0;
+  transition: grid-template-rows 0.4s var(--ease), padding-top 0.4s var(--ease);
+}
+.faq details[open] .faq-body { grid-template-rows: 1fr; padding-top: 10px; }
+.faq .faq-body > p { overflow: hidden; min-height: 0; margin: 0 0 0 34px; font-size: 0.94rem; color: var(--muted); }
 
 /* ---------- Footer ---------- */
 footer.site {
