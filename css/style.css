@@ -38,12 +38,9 @@ html.dark {
   --header-bg: rgba(0, 0, 0, 0.72);
   color-scheme: dark;
 }
-html.theme-fade, html.theme-fade * {
+html.theme-fade :not(.theme-toggle):not(.theme-toggle *) {
   transition: background-color 0.45s var(--ease), color 0.45s var(--ease), border-color 0.45s var(--ease), box-shadow 0.45s var(--ease), fill 0.45s var(--ease), stroke 0.45s var(--ease) !important;
 }
-html.theme-fade .tgl { transition: transform 0.6s var(--ease) !important; }
-html.theme-fade .icon-sun { transition: opacity 0.2s ease 0.26s !important; }
-html.theme-fade .icon-moon { transition: opacity 0.2s ease !important; }
 * { box-sizing: border-box; }
 html { background: var(--bg); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scrollbar-width: thin; scrollbar-color: #c7c7cc transparent; }
 html.lenis, html.lenis body { height: auto; }
@@ -161,13 +158,17 @@ nav.site a:active { transform: scale(0.96); }
 .theme-toggle:active { transform: scale(0.93); transition-duration: 0.12s; }
 .theme-toggle:focus { outline: none; }
 .theme-toggle:focus-visible { box-shadow: var(--ring); }
-.tgl { position: relative; display: block; width: 22px; height: 22px; transform: rotate(0deg); transition: transform 0.6s var(--ease); }
-html.dark .tgl { transform: rotate(180deg); }
-.tgl .ic { position: absolute; inset: 0; width: 22px; height: 22px; }
-.icon-sun { opacity: 1; transition: opacity 0.2s ease; }
-.icon-moon { opacity: 0; transform: rotate(180deg); transition: opacity 0.2s ease 0.26s; }
-html.dark .icon-sun { opacity: 0; transition: opacity 0.2s ease 0.26s; }
-html.dark .icon-moon { opacity: 1; transition: opacity 0.2s ease; }
+.tgl { position: relative; display: block; width: 22px; height: 22px; }
+.sat { position: absolute; inset: 0; transform-origin: 11px 21px; transition: transform 0.6s ease-in-out; }
+.sat .ic { display: block; width: 22px; height: 22px; transform-origin: 50% 50%; }
+.sat-sun { transform: rotate(0deg); }
+.sat-moon { transform: rotate(180deg); }
+html.dark .sat-sun { transform: rotate(180deg); }
+html.dark .sat-moon { transform: rotate(360deg); }
+.sat-sun .ic { opacity: 1; transition: transform 0.6s ease-in-out, opacity 0.15s ease; }
+.sat-moon .ic { opacity: 0; transform: rotate(-180deg); transition: transform 0.6s ease-in-out, opacity 0.15s ease 0.45s; }
+html.dark .sat-sun .ic { opacity: 0; transition: transform 0.6s ease-in-out, opacity 0.15s ease 0.45s; }
+html.dark .sat-moon .ic { opacity: 1; transform: rotate(-360deg); transition: transform 0.6s ease-in-out, opacity 0.15s ease; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -393,33 +394,24 @@ html.dark .ad-slot { background: repeating-linear-gradient(45deg, #151517, #1515
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 .faq details:hover { border-color: var(--line-strong); box-shadow: var(--shadow-md); }
-.faq details[open] { border-color: rgba(0, 113, 227, 0.3); }
+.faq details.open { border-color: rgba(0, 113, 227, 0.3); }
 .faq summary { font-weight: 600; cursor: pointer; font-size: 0.98rem; list-style: none; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::before {
-  content: "+";
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  margin-right: 12px;
-  border-radius: 50%;
-  background: var(--bg);
-  color: var(--muted);
-  text-align: center;
-  line-height: 21px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: transform 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
+  position: absolute; left: 14px; top: 50%; margin-top: -10px;
+  width: 20px; height: 20px; border-radius: 50%; background: var(--muted-bg);
+  color: var(--muted); font-weight: 700; font-size: 0.9rem; line-height: 20px; text-align: center;
+  content: "+"; transition: transform 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
 }
 .faq details:hover summary::before { color: var(--accent); }
-.faq details[open] summary::before { transform: rotate(45deg); background: var(--accent); color: #fff; }
+.faq details.open summary::before { transform: rotate(45deg); background: var(--accent); color: #fff; }
 .faq .faq-body {
   display: grid;
   grid-template-rows: 0fr;
   padding-top: 0;
   transition: grid-template-rows 0.4s var(--ease), padding-top 0.4s var(--ease);
 }
-.faq details[open] .faq-body { grid-template-rows: 1fr; padding-top: 10px; }
+.faq details.open .faq-body { grid-template-rows: 1fr; padding-top: 10px; }
 .faq .faq-body > p { overflow: hidden; min-height: 0; margin: 0 0 0 34px; font-size: 0.94rem; color: var(--muted); }
 
 /* ---------- Footer ---------- */

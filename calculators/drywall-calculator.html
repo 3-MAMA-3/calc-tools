@@ -22,8 +22,8 @@
         <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
           <span class="tgl">
-            <svg class="ic icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
-            <svg class="ic icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <span class="sat sat-sun"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></span>
+            <span class="sat sat-moon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
           </span>
         </button>
       </nav>
@@ -55,6 +55,19 @@
       <details><summary data-i18n="calc.drywall-calculator.faqs.1.q">What thickness drywall should I use?</summary><div class="faq-body"><p data-i18n="calc.drywall-calculator.faqs.1.a">1/2-inch standard drywall for most walls and ceilings, 5/8-inch for fire-rated separations and garage ceilings, and 1/4-inch for skimming over existing walls.</p></div></details>
       <details><summary data-i18n="calc.drywall-calculator.faqs.2.q">How much does drywall installation cost?</summary><div class="faq-body"><p data-i18n="calc.drywall-calculator.faqs.2.a">Installed cost (materials + labor) typically runs $1.50-$3.50 per sq ft in the US, depending on location and finish level. DIY sheet prices range from $12-$20 for 4x8.</p></div></details>
     </div>
+    <script>
+    (function () {
+      var fs = document.querySelectorAll(".faq details");
+      for (var i = 0; i < fs.length; i++) (function (d) {
+        d.open = true;
+        var s = d.querySelector("summary");
+        if (s) s.addEventListener("click", function (e) {
+          e.preventDefault();
+          d.classList.toggle("open");
+        });
+      })(fs[i]);
+    })();
+    </script>
 
     <div class="affiliate-box">
       <h3 data-i18n="aff.title">Supplies for this project</h3>

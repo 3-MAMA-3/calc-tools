@@ -168,7 +168,7 @@
     if (t && t.classList.contains("copy-url") && shareEl) {
       shareEl.select();
       document.execCommand("copy");
-      var copiedTxt = T ? T.t("share.copied") : "Copied!";
+      var copiedTxt = (T ? T.t("share.copied") : "Copied!").replace(/^[!¡]+|[!¡]+$/g, "");
       var alt = t.querySelector(".alt");
       if (alt) alt.textContent = copiedTxt;
       t.classList.add("copied");
