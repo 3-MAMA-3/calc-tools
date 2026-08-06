@@ -163,8 +163,8 @@ function rebuildIndexToolGrid(slugs) {
   if (start === -1 || end === -1) return;
   const cards = slugs.map(s => {
     const meta = SLUG_META[s] || BANK.find(c => c.slug === s);
-    const title = meta ? meta[0] || meta.metaTitle : s;
-    const tag = meta ? meta[1] || meta.lead : "";
+    const title = meta ? (meta[0] || meta.h1 || meta.metaTitle) : s;
+    const tag = meta ? (meta[1] || meta.lead || "") : "";
     return `      <a class="tool-card" href="calculators/${s}.html"><b>${esc(title)}</b><span>${esc(tag)}</span></a>`;
   }).join("\n");
   const block = `    <!-- TOOLS:START -->\n    <div class="tool-grid">\n${cards}\n    </div>\n    <!-- TOOLS:END -->`;
