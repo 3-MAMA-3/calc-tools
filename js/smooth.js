@@ -4,9 +4,9 @@
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   var lenis = new Lenis({
-    lerp: 0.15,
+    lerp: 0.18,
     smoothWheel: true,
-    wheelMultiplier: 1.05,
+    wheelMultiplier: 1.1,
     touchMultiplier: 1.6
   });
 
@@ -21,7 +21,7 @@
     while (t && !(t.getAttribute && t.getAttribute("href") && t.getAttribute("href").charAt(0) === "#")) t = t.parentNode;
     if (t && t.getAttribute("href") && t.getAttribute("href").length > 1) {
       e.preventDefault();
-      lenis.scrollTo(t.getAttribute("href"), { offset: -80, duration: 0.5 });
+      lenis.scrollTo(t.getAttribute("href"), { offset: -80, duration: 0.4 });
     }
   });
 })();

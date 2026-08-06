@@ -6,6 +6,9 @@ window.I18N_CORE = {
   chrome: {
     en: {
       "nav.all": "All calculators",
+      "footer.tools": "Popular tools",
+      "footer.links": "Site links",
+      "footer.disclaimer": "Estimates only - verify exact quantities with your supplier before ordering.",
       "footer.tag": "Free home improvement calculators.",
       "footer.privacy": "Privacy",
       "footer.contact": "Contact",
@@ -67,6 +70,9 @@ window.I18N_CORE = {
     },
     de: {
       "nav.all": "Alle Rechner",
+      "footer.tools": "Beliebte Rechner",
+      "footer.links": "Website-Links",
+      "footer.disclaimer": "Nur Schätzwerte - Mengen vor der Bestellung beim Händler prüfen.",
       "footer.tag": "Kostenlose Heimwerker-Rechner.",
       "footer.privacy": "Datenschutz",
       "footer.contact": "Kontakt",
@@ -128,6 +134,9 @@ window.I18N_CORE = {
     },
     es: {
       "nav.all": "Todas las calculadoras",
+      "footer.tools": "Calculadoras populares",
+      "footer.links": "Enlaces del sitio",
+      "footer.disclaimer": "Solo estimaciones - verifica las cantidades con tu proveedor antes de pedir.",
       "footer.tag": "Calculadoras gratuitas para mejoras del hogar.",
       "footer.privacy": "Privacidad",
       "footer.contact": "Contacto",
@@ -189,6 +198,9 @@ window.I18N_CORE = {
     },
     fr: {
       "nav.all": "Tous les calculateurs",
+      "footer.tools": "Calculatrices populaires",
+      "footer.links": "Liens du site",
+      "footer.disclaimer": "Estimations uniquement - vérifiez les quantités auprès de votre fournisseur avant de commander.",
       "footer.tag": "Calculateurs gratuits pour la maison.",
       "footer.privacy": "Confidentialité",
       "footer.contact": "Contact",
@@ -250,6 +262,9 @@ window.I18N_CORE = {
     },
     pt: {
       "nav.all": "Todas as calculadoras",
+      "footer.tools": "Calculadoras populares",
+      "footer.links": "Links do site",
+      "footer.disclaimer": "Apenas estimativas - confirme as quantidades com o fornecedor antes de pedir.",
       "footer.tag": "Calculadoras gratuitas de reforma.",
       "footer.privacy": "Privacidade",
       "footer.contact": "Contato",
@@ -311,6 +326,9 @@ window.I18N_CORE = {
     },
     it: {
       "nav.all": "Tutte le calcolatrici",
+      "footer.tools": "Calcolatrici popolari",
+      "footer.links": "Link utili",
+      "footer.disclaimer": "Solo stime - verifica le quantità con il fornitore prima di ordinare.",
       "footer.tag": "Calcolatrici gratuite per il fai-da-te.",
       "footer.privacy": "Privacy",
       "footer.contact": "Contatti",
@@ -372,6 +390,9 @@ window.I18N_CORE = {
     },
     nl: {
       "nav.all": "Alle calculators",
+      "footer.tools": "Populaire calculators",
+      "footer.links": "Sitelinks",
+      "footer.disclaimer": "Alleen schattingen - controleer de hoeveelheden bij uw leverancier voordat u bestelt.",
       "footer.tag": "Gratis verbouwingscalculators.",
       "footer.privacy": "Privacy",
       "footer.contact": "Contact",
@@ -433,6 +454,9 @@ window.I18N_CORE = {
     },
     pl: {
       "nav.all": "Wszystkie kalkulatory",
+      "footer.tools": "Popularne kalkulatory",
+      "footer.links": "Linki do witryny",
+      "footer.disclaimer": "Tylko szacunki - przed zamówieniem potwierdź ilości u dostawcy.",
       "footer.tag": "Darmowe kalkulatory remontowe.",
       "footer.privacy": "Prywatność",
       "footer.contact": "Kontakt",
@@ -494,6 +518,9 @@ window.I18N_CORE = {
     },
     sv: {
       "nav.all": "Alla kalkylatorer",
+      "footer.tools": "Populära kalkylatorer",
+      "footer.links": "Sitelänkar",
+      "footer.disclaimer": "Endast uppskattningar - verifiera mängderna med din leverantör innan du beställer.",
       "footer.tag": "Gratis renoveringskalkylatorer.",
       "footer.privacy": "Integritet",
       "footer.contact": "Kontakt",
@@ -555,6 +582,9 @@ window.I18N_CORE = {
     },
     ja: {
       "nav.all": "すべての計算ツール",
+      "footer.tools": "人気の計算ツール",
+      "footer.links": "サイトリンク",
+      "footer.disclaimer": "目安です。ご注文前に仕入先で数量をご確認ください。",
       "footer.tag": "無料のDIYリフォーム計算ツール。",
       "footer.privacy": "プライバシー",
       "footer.contact": "お問い合わせ",
@@ -616,6 +646,9 @@ window.I18N_CORE = {
     },
     zh: {
       "nav.all": "所有计算器",
+      "footer.tools": "热门计算工具",
+      "footer.links": "网站链接",
+      "footer.disclaimer": "仅供参考 - 订购前请向供应商核实数量。",
       "footer.tag": "免费的房屋装修计算器。",
       "footer.privacy": "隐私政策",
       "footer.contact": "联系我们",

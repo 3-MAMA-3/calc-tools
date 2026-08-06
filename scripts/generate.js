@@ -15,6 +15,41 @@ function esc(s) {
     .replace(/"/g, "&quot;");
 }
 
+function buildFooter(base) {
+  const toolLinks = BANK.map(c =>
+    `<a href="${base}${CFG.PAGES_DIR}/${c.slug}.html" data-i18n="calc.${c.slug}.h1">${esc(c.title)}</a>`
+  ).join("\n            ");
+  return `  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <b>${esc(CFG.SITE_NAME)}</b>
+          <span data-i18n="footer.tag">Free home improvement calculators.</span>
+        </div>
+        <div class="foot-col">
+          <b class="foot-head" data-i18n="footer.tools">Popular tools</b>
+          <div class="foot-tools">
+            ${toolLinks}
+          </div>
+        </div>
+        <div class="foot-col">
+          <b class="foot-head" data-i18n="footer.links">Site links</b>
+          <div class="foot-links">
+            <a href="${base}index.html" data-i18n="index.all">All calculators</a>
+            <a href="${base}privacy.html" data-i18n="footer.privacy">Privacy</a>
+            <a href="${base}contact.html" data-i18n="footer.contact">Contact</a>
+            <a href="${base}sitemap.xml" data-i18n="footer.sitemap">Sitemap</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; <span id="year"></span> ${esc(CFG.SITE_NAME)}. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+        <span data-i18n="footer.disclaimer">Estimates only - verify exact quantities with your supplier before ordering.</span>
+      </div>
+    </div>
+  </footer>`;
+}
+
 function buildPage(c) {
   const faqJson = JSON.stringify({
     "@context": "https://schema.org",
@@ -104,12 +139,7 @@ function buildPage(c) {
     </div>
   </main>
 
-  <footer class="site">
-    <div class="wrap cols">
-      <span>&copy; <span id="year"></span> ${esc(CFG.SITE_NAME)}. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
-      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
-    </div>
-  </footer>
+  ${buildFooter("../")}
 
   <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
