@@ -20,7 +20,7 @@
     idleTimer = setTimeout(function () {
       if (dead || anchorBusy) return;
       try { lenis.stop(); } catch (e) {}
-    }, 120);
+    }, 240);
   }
   window.addEventListener("wheel", wake, { passive: true, capture: true });
 
