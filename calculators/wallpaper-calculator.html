@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wallpaper Calculator - How Many Rolls Do I Need?</title>
+  <meta name="description" content="Free wallpaper calculator: work out how many rolls of wallpaper you need for any room, for US single rolls, US double rolls or European rolls.">
+  <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/wallpaper-calculator.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How many rolls of wallpaper do I need for a 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"A 12x12 room with 8-foot walls needs about 8 US single rolls of wallpaper: the walls total roughly 384 sq ft, minus doors and windows, with each single roll covering about 28 usable sq ft."}},
+      {"@type":"Question","name":"How many square feet does a roll of wallpaper cover?","acceptedAnswer":{"@type":"Answer","text":"A US single roll covers about 28 usable sq ft, a double roll about 56 sq ft, and a European roll (10m x 0.53m) about 57 sq ft. Pattern matching reduces usable coverage."}},
+      {"@type":"Question","name":"How much extra wallpaper should I buy?","acceptedAnswer":{"@type":"Answer","text":"Always buy one extra roll. Pattern repeats waste material (add 10-20%), and buying matching rolls later is impossible once the batch changes."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
+      <nav class="site"><a href="../index.html">All calculators</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Wallpaper Calculator</h1>
+    <p class="lead">Find out exactly how many rolls of wallpaper you need for a room - with US single, double and European roll sizes, and pattern-repeat allowance.</p>
+
+    <div class="card">
+      <form id="calc-form"></form>
+      <div id="results" class="results"></div>
+      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2>How to use this wallpaper calculator</h2>
+    <p>Measure the length, width and ceiling height of the room, subtract your window and door area, and pick the roll type. The calculator multiplies the perimeter by the height and divides by the usable coverage per roll.</p>
+    <p>Patterned wallpaper needs more material: with a large pattern repeat you lose up to 20% to matching cuts, so select a roll type and check "patterned" to add the standard 15% allowance. One extra roll on top of that is the safe rule.</p>
+
+    <div class="faq">
+      <h2>Wallpaper FAQ</h2>
+      <details><summary>How do I measure for wallpaper?</summary><p>Measure each wall's width and add them together for the perimeter, then multiply by the wall height. Subtract 15 sq ft per window and 21 sq ft per door, then divide by the roll coverage.</p></details>
+      <details><summary>What is a double roll of wallpaper?</summary><p>Most wallpaper is actually sold as double rolls (56 usable sq ft) but priced per single roll. Check your order: many shops list per single roll but ship double rolls.</p></details>
+      <details><summary>How much does wallpaper installation cost?</summary><p>Professional installation typically costs $2-$4 per sq ft or $25-$60 per roll. DIY is very doable with pre-pasted wallpaper, but needs careful surface prep.</p></details>
+    </div>
+
+    <div class="affiliate-box">
+      <h3>Supplies for this project</h3>
+      <ul>
+        <li><a href="#" rel="nofollow sponsored">Wallpaper (all patterns and styles)</a></li>
+        <li><a href="#" rel="nofollow sponsored">Wallpaper paste and primer</a></li>
+        <li><a href="#" rel="nofollow sponsored">Smoothing tools and seam rollers</a></li>
+      </ul>
+    </div>
+
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="paint-calculator.html"><b>Paint Calculator</b><span>Paint instead of paper?</span></a>
+      <a class="tool-card" href="drywall-calculator.html"><b>Drywall Calculator</b><span>Walls behind the paper</span></a>
+      <a class="tool-card" href="flooring-calculator.html"><b>Flooring Calculator</b><span>Floor to match the walls</span></a>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
+      <span><a href="../index.html">All calculators</a></span>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC = {
+      title: "Wallpaper Calculator",
+      fields: [
+        { name: "length", label: "Room length", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "width", label: "Room width", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "height", label: "Wall height", unit: "ft", value: 8, min: 6, max: 20, step: 0.5 },
+        { name: "openings", label: "Window & door area", unit: "sq ft", value: 50, min: 0, max: 2000, step: 5 },
+        { name: "roll", label: "Roll type", type: "select", options: [ { value: 28, label: "US single roll (28 sq ft)" }, { value: 56, label: "US double roll (56 sq ft)" }, { value: 57, label: "European roll (10m x 0.53m)" } ] },
+        { name: "pattern", label: "Pattern", type: "select", options: [ { value: 0, label: "Plain / no match" }, { value: 15, label: "Patterned (adds 15%)" } ] }
+      ],
+      compute: function (v) {
+        var area = 2 * (v.length + v.width) * v.height - v.openings;
+        var adjusted = area * (1 + v.pattern / 100);
+        var rolls = Math.ceil(adjusted / v.roll);
+        return [
+          { label: "Wall area", value: area, unit: "sq ft", note: "openings subtracted" },
+          { label: "Rolls needed", value: rolls, unit: "rolls", note: "includes " + (v.pattern === 0 ? "no" : "15%") + " pattern allowance" },
+          { label: "Safe total (+1)", value: rolls + 1, unit: "rolls", note: "recommended" }
+        ];
+      }
+    };
+  </script>
+  <script src="../js/calculator.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

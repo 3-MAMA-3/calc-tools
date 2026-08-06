@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://3-mama-3.github.io/calc-tools/sitemap.xml

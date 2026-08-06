@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carpet Calculator - How Much Carpet Do I Need in Square Yards?</title>
+  <meta name="description" content="Free carpet calculator: estimate square feet and square yards of carpet needed for any room, with standard 12-foot roll width waste factored in.">
+  <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/carpet-calculator.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many square yards is a 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"A 12x12 room is 144 sq ft, which is exactly 16 square yards of carpet before waste. With a plain carpet and clean seams, 16-18 sq yd is a safe order."}},{"@type":"Question","name":"Why do carpet installers charge for waste?","acceptedAnswer":{"@type":"Answer","text":"Carpet comes in 12-foot-wide rolls, so a 14x12 room needs a 14-foot length of a 12-foot-wide roll: 168 sq ft of carpet for a 144 sq ft floor. That off-cut is still charged."}},{"@type":"Question","name":"How much does carpet cost per square foot?","acceptedAnswer":{"@type":"Answer","text":"Installed carpet typically runs $3-$8 per sq ft in 2025-2026: $2-$4 for materials and $1.50-$3 for installation, padding and removal of the old carpet."}}]}
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
+      <nav class="site"><a href="../index.html">All calculators</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Carpet Calculator</h1>
+    <p class="lead">Find out how much carpet to order for a room - in square feet and square yards, the two units every carpet store quotes in.</p>
+
+    <div class="card">
+      <form id="calc-form"></form>
+      <div id="results" class="results"></div>
+      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2>How to use this carpet calculator</h2>
+    <p>Measure the room length and width in feet. Carpet is sold in 12-foot-wide rolls, so the width of your room determines how much is wasted as trimmings.</p>
+    <p>If either dimension exceeds 12 feet, the installer must seam two pieces - add one extra foot to the length for every seam to allow pattern matching and trimming.</p>
+    <p>Carpet is quoted in square yards: divide your square footage by 9. Always order 5-10% extra, because installers cannot splice a small missing piece invisibly.</p>
+
+    <div class="faq">
+      <h2>Carpet calculator FAQ</h2>
+      <details><summary>How many square yards is a 12x12 room?</summary><p>A 12x12 room is 144 sq ft, which is exactly 16 square yards of carpet before waste. With a plain carpet and clean seams, 16-18 sq yd is a safe order.</p></details>
+      <details><summary>Why do carpet installers charge for waste?</summary><p>Carpet comes in 12-foot-wide rolls, so a 14x12 room needs a 14-foot length of a 12-foot-wide roll: 168 sq ft of carpet for a 144 sq ft floor. That off-cut is still charged.</p></details>
+      <details><summary>How much does carpet cost per square foot?</summary><p>Installed carpet typically runs $3-$8 per sq ft in 2025-2026: $2-$4 for materials and $1.50-$3 for installation, padding and removal of the old carpet.</p></details>
+    </div>
+
+    <div class="affiliate-box">
+      <h3>Supplies for this project</h3>
+      <ul>
+        <li><a href="#" rel="nofollow sponsored">Carpet by the square yard (all styles)</a></li>
+        <li><a href="#" rel="nofollow sponsored">Carpet padding and tack strips</a></li>
+        <li><a href="#" rel="nofollow sponsored">Carpet stretcher and seam irons</a></li>
+      </ul>
+    </div>
+
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="[object Object].html"><b>Flooring Calculator</b><span>Laminate and vinyl alternative</span></a>
+      <a class="tool-card" href="[object Object].html"><b>Tile Calculator</b><span>Tile alternative for the room</span></a>
+      <a class="tool-card" href="[object Object].html"><b>Paint Calculator</b><span>Paint the walls around it</span></a>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
+      <span><a href="../index.html">All calculators</a></span>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC = {
+      title: "Carpet Calculator - How Much Carpet Do I Need in Square Yards?",
+      fields: [
+        { name: "length", label: "Room length", type: "number", unit: "ft", value: 14, min: 1, max: 200, step: 0.5 },
+        { name: "width", label: "Room width", type: "number", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "pattern", label: "Pattern", type: "select", options: [ { value: 0, label: "Plain / no match" }, { value: 10, label: "Patterned (adds 10%)" } ] }
+      ],
+      compute: function (v) {
+        var sqft = v.length * v.width;
+        var adjusted = sqft * (1 + v.pattern / 100);
+        return [
+          { label: "Room area", value: sqft, unit: "sq ft" },
+          { label: "Carpet to order", value: adjusted, unit: "sq ft", note: v.pattern === 0 ? "no pattern allowance" : "10% pattern allowance" },
+          { label: "Square yards", value: Math.ceil(adjusted / 9 * 10) / 10, unit: "sq yd" }
+        ];
+      }
+    };
+  </script>
+  <script src="../js/calculator.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

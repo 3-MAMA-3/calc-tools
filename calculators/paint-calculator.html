@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paint Calculator - How Much Paint Do I Need? (Walls + Ceiling)</title>
+  <meta name="description" content="Free paint calculator: enter room dimensions, windows and doors, and get the exact gallons of paint needed for walls in seconds. Includes per-coat estimates.">
+  <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/paint-calculator.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How much paint do I need for a 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"A 12x12 room with 8-foot ceilings and one door and one window needs about 1.5 gallons of paint for two coats of wall coverage (roughly 375 sq ft of wall area)."}},
+      {"@type":"Question","name":"How many square feet does a gallon of paint cover?","acceptedAnswer":{"@type":"Answer","text":"One gallon of interior paint covers approximately 350 square feet of wall surface per coat, but actual coverage depends on the paint quality, surface texture and application method."}},
+      {"@type":"Question","name":"Do I need primer before painting?","acceptedAnswer":{"@type":"Answer","text":"Primer is recommended on new drywall, bare wood, or when making a drastic color change. One gallon of primer covers roughly 300-400 square feet."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
+      <nav class="site"><a href="../index.html">All calculators</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Paint Calculator</h1>
+    <p class="lead">Enter your room dimensions below and get an instant estimate of how many gallons of paint you need for the walls. No guesswork, no leftover cans.</p>
+
+    <div class="card">
+      <form id="calc-form"></form>
+      <div id="results" class="results"></div>
+      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2>How to use this paint calculator</h2>
+    <p>Measure your room's length, width and ceiling height in feet, count the doors and windows (they subtract from the paintable area), and pick how many coats you plan to apply. The calculator works out the total wall area and divides it by the standard coverage of one gallon (350 sq ft per coat). The result is rounded up to the nearest half-gallon so you always buy slightly more than you need - painting is far cheaper than a second trip to the store.</p>
+    <p>Tip: if you are also painting the ceiling, add about 25-30% more paint or use the same dimensions with the ceiling area added. Textured walls (knockdown, orange peel) absorb 10-20% more paint than smooth drywall.</p>
+
+    <div class="faq">
+      <h2>Paint FAQ</h2>
+      <details><summary>How do I calculate the wall area of a room?</summary><p>Multiply the perimeter of the room (length + width, doubled) by the ceiling height: 2 x (L + W) x H. Subtract 15 sq ft for each window and 21 sq ft for each standard door.</p></details>
+      <details><summary>Is 2 coats of paint always necessary?</summary><p>Two coats give a more durable, even finish and better color depth. One coat is usually enough only for touch-ups or when repainting with the exact same color.</p></details>
+      <details><summary>Can I use this calculator for exterior painting?</summary><p>Yes - use the same formula but remember exterior paint covers slightly less (about 300-320 sq ft per gallon) because of the rough surface of siding and stucco.</p></details>
+    </div>
+
+    <div class="affiliate-box">
+      <h3>Supplies for this project</h3>
+      <ul>
+        <li><a href="#" rel="nofollow sponsored">Interior paint - popular brands and price ranges</a></li>
+        <li><a href="#" rel="nofollow sponsored">Painter's tape and drop cloths</a></li>
+        <li><a href="#" rel="nofollow sponsored">Roller sets and extension poles</a></li>
+      </ul>
+    </div>
+
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="drywall-calculator.html"><b>Drywall Calculator</b><span>How many sheets for your room</span></a>
+      <a class="tool-card" href="flooring-calculator.html"><b>Flooring Calculator</b><span>Laminate & vinyl cartons needed</span></a>
+      <a class="tool-card" href="concrete-calculator.html"><b>Concrete Calculator</b><span>Cubic yards and bag count</span></a>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
+      <span><a href="../index.html">All calculators</a></span>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC = {
+      title: "Paint Calculator",
+      fields: [
+        { name: "length", label: "Room length", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "width", label: "Room width", unit: "ft", value: 10, min: 1, max: 200, step: 0.5 },
+        { name: "height", label: "Ceiling height", unit: "ft", value: 8, min: 6, max: 20, step: 0.5 },
+        { name: "windows", label: "Windows", value: 2, min: 0, max: 20, step: 1 },
+        { name: "doors", label: "Doors", value: 1, min: 0, max: 20, step: 1 },
+        { name: "coats", label: "Coats of paint", type: "select", options: [ { value: 1, label: "1 coat" }, { value: 2, label: "2 coats" }, { value: 3, label: "3 coats" } ] }
+      ],
+      compute: function (v) {
+        var area = 2 * (v.length + v.width) * v.height - v.windows * 15 - v.doors * 21;
+        var gallons = area * v.coats / 350;
+        return [
+          { label: "Wall area to cover", value: area, unit: "sq ft" },
+          { label: "Paint needed", value: Math.ceil(gallons * 2) / 2, unit: "gallons", note: "rounded up to nearest half gallon" }
+        ];
+      }
+    };
+  </script>
+  <script src="../js/calculator.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

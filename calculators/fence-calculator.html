@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fence Calculator - Posts, Rails &amp; Pickets Needed for a Fence</title>
+  <meta name="description" content="Free fence calculator: find out how many posts, rails and linear feet of fencing you need for any yard perimeter.">
+  <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/fence-calculator.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many fence posts do I need for 100 feet?","acceptedAnswer":{"@type":"Answer","text":"At 8-foot spacing, 100 feet needs about 13 posts (12 sections plus the starting post). At 6-foot spacing it is 17 posts, and at 10-foot spacing 11 posts."}},{"@type":"Question","name":"How deep should fence posts be set?","acceptedAnswer":{"@type":"Answer","text":"Set posts one-third of their length in concrete: a standard 8-foot post with 2 feet below ground, using 1-2 bags of quick-set concrete per post."}},{"@type":"Question","name":"How far apart should pickets be on a privacy fence?","acceptedAnswer":{"@type":"Answer","text":"For a solid privacy fence, place pickets flush with a 3/8 to 1/2-inch gap. A 6-foot tall board-on-board design needs about 3 pickets per linear foot of fence."}}]}
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
+      <nav class="site"><a href="../index.html">All calculators</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Fence Calculator</h1>
+    <p class="lead">Plan a fence in minutes: number of posts, rails and the total linear feet you need for any yard size and post spacing.</p>
+
+    <div class="card">
+      <form id="calc-form"></form>
+      <div id="results" class="results"></div>
+      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2>How to use this fence calculator</h2>
+    <p>Measure the total perimeter you want to fence in feet. For a rectangular yard, add the two lengths and two widths; add extra for gates and corners that change the run.</p>
+    <p>Choose your post spacing: 8 feet is standard for wood fences, 6 feet for windy areas or vinyl, and 10 feet for simple wire fences. The calculator adds one post for the starting corner.</p>
+    <p>Rails run horizontally between posts: 2 rails for a 4-foot fence, 3 rails for 6-foot privacy fencing. Rails are usually sold in 8 or 12-foot pieces - the calculator counts full pieces.</p>
+
+    <div class="faq">
+      <h2>Fence calculator FAQ</h2>
+      <details><summary>How many fence posts do I need for 100 feet?</summary><p>At 8-foot spacing, 100 feet needs about 13 posts (12 sections plus the starting post). At 6-foot spacing it is 17 posts, and at 10-foot spacing 11 posts.</p></details>
+      <details><summary>How deep should fence posts be set?</summary><p>Set posts one-third of their length in concrete: a standard 8-foot post with 2 feet below ground, using 1-2 bags of quick-set concrete per post.</p></details>
+      <details><summary>How far apart should pickets be on a privacy fence?</summary><p>For a solid privacy fence, place pickets flush with a 3/8 to 1/2-inch gap. A 6-foot tall board-on-board design needs about 3 pickets per linear foot of fence.</p></details>
+    </div>
+
+    <div class="affiliate-box">
+      <h3>Supplies for this project</h3>
+      <ul>
+        <li><a href="#" rel="nofollow sponsored">Fence posts and post anchors</a></li>
+        <li><a href="#" rel="nofollow sponsored">Fence rails and pickets (all styles)</a></li>
+        <li><a href="#" rel="nofollow sponsored">Post-hole diggers and quick-set concrete</a></li>
+      </ul>
+    </div>
+
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="[object Object].html"><b>Gravel Calculator</b><span>Base rock for post holes</span></a>
+      <a class="tool-card" href="[object Object].html"><b>Concrete Calculator</b><span>Concrete for setting posts</span></a>
+      <a class="tool-card" href="[object Object].html"><b>Board Foot Calculator</b><span>Lumber volume for the build</span></a>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
+      <span><a href="../index.html">All calculators</a></span>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC = {
+      title: "Fence Calculator - Posts, Rails &amp; Pickets Needed for a Fence",
+      fields: [
+        { name: "length", label: "Fence length", type: "number", unit: "ft", value: 120, min: 1, max: 5000, step: 1 },
+        { name: "spacing", label: "Post spacing", type: "select", options: [ { value: 6, label: "6 ft (windy areas)" }, { value: 8, label: "8 ft (standard wood)" }, { value: 10, label: "10 ft (wire / low fence)" } ] },
+        { name: "rails", label: "Rails per section", type: "select", options: [ { value: 2, label: "2 (4 ft fence)" }, { value: 3, label: "3 (6 ft privacy fence)" } ] },
+        { name: "railLength", label: "Rail piece length", type: "select", options: [ { value: 8, label: "8 ft" }, { value: 12, label: "12 ft" } ] }
+      ],
+      compute: function (v) {
+        var posts = Math.ceil(v.length / v.spacing) + 1;
+        var railFeet = v.length * v.rails;
+        var railPieces = Math.ceil(railFeet / v.railLength);
+        return [
+          { label: "Fence length", value: v.length, unit: "linear ft" },
+          { label: "Posts needed", value: posts, unit: "posts", note: "incl. starting post" },
+          { label: "Rail length", value: railFeet, unit: "linear ft" },
+          { label: "Rail pieces", value: railPieces, unit: "pieces", note: v.railLength + " ft each" }
+        ];
+      }
+    };
+  </script>
+  <script src="../js/calculator.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

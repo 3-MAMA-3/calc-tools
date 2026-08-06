@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tile Calculator - How Many Tiles Do I Need for Floor or Wall?</title>
+  <meta name="description" content="Free tile calculator: find out the number of floor or wall tiles you need for any room, including grout lines and the standard 10-15% waste for cuts and breakage.">
+  <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/tile-calculator.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How many 12x12 tiles do I need for a 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"A 12x12 room is 144 sq ft. Each 12x12 tile covers 1 sq ft, so you need 144 tiles plus about 15 for waste and cuts - around 159 tiles total."}},
+      {"@type":"Question","name":"How many tiles are in a box?","acceptedAnswer":{"@type":"Answer","text":"Most tile boxes cover 8-15 sq ft: about 10-12 tiles for 12x12 tiles, 6-8 for 18x18, and 4-5 for 24x24. The box always states the exact sq ft coverage."}},
+      {"@type":"Question","name":"What is the best layout for tile?","acceptedAnswer":{"@type":"Answer","text":"A straight grid is most efficient; a running bond (brick pattern) looks more natural for wood-look planks. Diagonal layouts need 15% waste because of edge cuts at every wall."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
+      <nav class="site"><a href="../index.html">All calculators</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Tile Calculator</h1>
+    <p class="lead">Enter your room size and tile dimensions to find out exactly how many tiles to buy - including waste for cuts, breakage and grout lines.</p>
+
+    <div class="card">
+      <form id="calc-form"></form>
+      <div id="results" class="results"></div>
+      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2>How to use this tile calculator</h2>
+    <p>Measure the length and width of the floor or wall area, pick your tile size, and choose a waste percentage. The calculator converts the room area into square inches, divides by the tile area, and applies the waste allowance to give a total tile count.</p>
+    <p>Use 10% waste for simple rectangular rooms with a straight layout. Choose 15% if you are installing diagonally, have lots of cutouts, or are tiling a room with many corners - every cut edge needs a full tile of origin.</p>
+
+    <div class="faq">
+      <h2>Tile FAQ</h2>
+      <details><summary>Should I add extra tile for waste?</summary><p>Always. Plan on 10% for a simple layout and 15% for diagonal or irregular rooms. You will also want a few spare tiles years later for repairs - matching discontinued tile is nearly impossible.</p></details>
+      <details><summary>What size grout line should I use?</summary><p>1/16 to 1/8 inch for rectified (precision-cut) large format tiles, 1/4 to 1/2 inch for hand-made and stone tiles. Larger grout joints hide small variations in tile size.</p></details>
+      <details><summary>Should I buy tile by the box or by the piece?</summary><p>By the box - but always buy whole boxes to reach your count. Check the box coverage (usually 8-15 sq ft) and round up to the next whole box.</p></details>
+    </div>
+
+    <div class="affiliate-box">
+      <h3>Supplies for this project</h3>
+      <ul>
+        <li><a href="#" rel="nofollow sponsored">Floor and wall tile (all sizes)</a></li>
+        <li><a href="#" rel="nofollow sponsored">Tile spacers, trowels and grout</a></li>
+        <li><a href="#" rel="nofollow sponsored">Wet tile saws and cutters</a></li>
+      </ul>
+    </div>
+
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="flooring-calculator.html"><b>Flooring Calculator</b><span>Plank cartons for the room</span></a>
+      <a class="tool-card" href="concrete-calculator.html"><b>Concrete Calculator</b><span>Backer board base material</span></a>
+      <a class="tool-card" href="paint-calculator.html"><b>Paint Calculator</b><span>Paint for the surrounding walls</span></a>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
+      <span><a href="../index.html">All calculators</a></span>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC = {
+      title: "Tile Calculator",
+      fields: [
+        { name: "length", label: "Room length", unit: "ft", value: 10, min: 1, max: 200, step: 0.5 },
+        { name: "width", label: "Room width", unit: "ft", value: 10, min: 1, max: 200, step: 0.5 },
+        { name: "tile", label: "Tile size", type: "select", options: [ { value: 36, label: "6x6 (0.25 sq ft)" }, { value: 144, label: "12x12 (1 sq ft)" }, { value: 324, label: "18x18 (2.25 sq ft)" }, { value: 576, label: "24x24 (4 sq ft)" } ] },
+        { name: "waste", label: "Waste allowance", type: "select", options: [ { value: 10, label: "10% (straight layout)" }, { value: 15, label: "15% (diagonal / many cuts)" } ] }
+      ],
+      compute: function (v) {
+        var areaSqft = v.length * v.width;
+        var totalSqft = areaSqft * (1 + v.waste / 100);
+        var tiles = Math.ceil(totalSqft * 144 / v.tile);
+        return [
+          { label: "Room area", value: areaSqft, unit: "sq ft" },
+          { label: "Area with waste", value: totalSqft, unit: "sq ft", note: v.waste + "% waste" },
+          { label: "Tiles needed", value: tiles, unit: "tiles", note: "rounded up" }
+        ];
+      }
+    };
+  </script>
+  <script src="../js/calculator.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

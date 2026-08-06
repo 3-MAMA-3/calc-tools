@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sod Calculator - How Many Pallets &amp; Rolls of Sod Do I Need?</title>
+  <meta name="description" content="Free sod calculator: find out how many square feet, rolls and pallets of grass sod you need for any lawn area, including waste.">
+  <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/sod-calculator.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many square feet does a pallet of sod cover?","acceptedAnswer":{"@type":"Answer","text":"Most suppliers stack roughly 450 square feet of sod on a pallet, but it varies between 400 and 500 sq ft depending on the grower. Ask your supplier for the exact coverage before ordering."}},{"@type":"Question","name":"How much does a pallet of sod cost?","acceptedAnswer":{"@type":"Answer","text":"Prices typically range from $130-$250 per pallet in the US (2025-2026), plus delivery. Loose rolls cost around $0.30-$0.80 per sq ft when bought in small quantities."}},{"@type":"Question","name":"How long can sod sit on a pallet?","acceptedAnswer":{"@type":"Answer","text":"Sod is living grass - it should be installed within 24 hours of delivery, and 48 hours at the absolute maximum. On hot days, water it lightly while it waits and keep rolls in the shade."}}]}
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
+      <nav class="site"><a href="../index.html">All calculators</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Sod Calculator</h1>
+    <p class="lead">Find out exactly how much sod to order for your lawn - in square feet, rolls and pallets - so you never run short on delivery day.</p>
+
+    <div class="card">
+      <form id="calc-form"></form>
+      <div id="results" class="results"></div>
+      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2>How to use this sod calculator</h2>
+    <p>Measure the length and width of the lawn area in feet. For irregular lawns, split the area into rectangles and circles, calculate each and add them together.</p>
+    <p>Pick a waste percentage: 5% for simple rectangular lawns, 10% for curved borders and beds. The calculator multiplies your lawn area accordingly and divides by the standard pallet coverage of 450 sq ft.</p>
+    <p>Most suppliers deliver by the pallet (about 450 sq ft) and sell loose rolls at roughly 10 sq ft each. Order pallets first, then top up with loose rolls to match your exact area.</p>
+
+    <div class="faq">
+      <h2>Sod calculator FAQ</h2>
+      <details><summary>How many square feet does a pallet of sod cover?</summary><p>Most suppliers stack roughly 450 square feet of sod on a pallet, but it varies between 400 and 500 sq ft depending on the grower. Ask your supplier for the exact coverage before ordering.</p></details>
+      <details><summary>How much does a pallet of sod cost?</summary><p>Prices typically range from $130-$250 per pallet in the US (2025-2026), plus delivery. Loose rolls cost around $0.30-$0.80 per sq ft when bought in small quantities.</p></details>
+      <details><summary>How long can sod sit on a pallet?</summary><p>Sod is living grass - it should be installed within 24 hours of delivery, and 48 hours at the absolute maximum. On hot days, water it lightly while it waits and keep rolls in the shade.</p></details>
+    </div>
+
+    <div class="affiliate-box">
+      <h3>Supplies for this project</h3>
+      <ul>
+        <li><a href="#" rel="nofollow sponsored">Grass sod by the pallet (delivery options)</a></li>
+        <li><a href="#" rel="nofollow sponsored">Lawn starter fertilizer and soil prep</a></li>
+        <li><a href="#" rel="nofollow sponsored">Sod knives, rollers and edgers</a></li>
+      </ul>
+    </div>
+
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="[object Object].html"><b>Gravel Calculator</b><span>Tons for driveways &amp; beds</span></a>
+      <a class="tool-card" href="[object Object].html"><b>Mulch Calculator</b><span>Bags or yards for beds</span></a>
+      <a class="tool-card" href="[object Object].html"><b>Concrete Calculator</b><span>Patio base and walkways</span></a>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
+      <span><a href="../index.html">All calculators</a></span>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC = {
+      title: "Sod Calculator - How Many Pallets &amp; Rolls of Sod Do I Need?",
+      fields: [
+        { name: "length", label: "Lawn length", type: "number", unit: "ft", value: 40, min: 1, max: 1000, step: 1 },
+        { name: "width", label: "Lawn width", type: "number", unit: "ft", value: 30, min: 1, max: 1000, step: 1 },
+        { name: "waste", label: "Waste allowance", type: "select", options: [ { value: 5, label: "5% (rectangular lawn)" }, { value: 10, label: "10% (curved / odd shapes)" } ] }
+      ],
+      compute: function (v) {
+        var area = v.length * v.width;
+        var withWaste = area * (1 + v.waste / 100);
+        var pallets = Math.ceil(withWaste / 450);
+        var rolls = Math.ceil(withWaste / 10);
+        return [
+          { label: "Lawn area", value: area, unit: "sq ft" },
+          { label: "Sod needed", value: withWaste, unit: "sq ft", note: v.waste + "% waste" },
+          { label: "Pallets needed", value: pallets, unit: "pallets", note: "450 sq ft per pallet" },
+          { label: "Loose rolls", value: rolls, unit: "rolls", note: "10 sq ft per roll" }
+        ];
+      }
+    };
+  </script>
+  <script src="../js/calculator.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

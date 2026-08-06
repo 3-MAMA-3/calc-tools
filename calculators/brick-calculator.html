@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brick Calculator - How Many Bricks Do I Need for a Wall or Patio?</title>
+  <meta name="description" content="Free brick calculator: estimate how many modular or standard bricks you need for a wall or patio, with mortar joint and waste allowance.">
+  <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/brick-calculator.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many bricks do I need for a 10x10 patio?","acceptedAnswer":{"@type":"Answer","text":"A 10x10 patio is 100 sq ft. With modular bricks at 7 per sq ft, that is 700 bricks plus 10% waste: about 770 bricks total."}},{"@type":"Question","name":"How many bricks are in a cube or pallet?","acceptedAnswer":{"@type":"Answer","text":"Bricks are typically packed 500 per cube/pallet (some suppliers pack 450-550). Order full pallets, then add loose bricks to match your calculated total."}},{"@type":"Question","name":"How much mortar do I need for a brick wall?","acceptedAnswer":{"@type":"Answer","text":"One bag of mortar mix covers roughly 30-40 sq ft of brick wall at a standard 3/8-inch joint. For a 100 sq ft wall, plan on 3-4 bags."}}]}
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
+      <nav class="site"><a href="../index.html">All calculators</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Brick Calculator</h1>
+    <p class="lead">Work out how many bricks to order for a wall, path or patio - including mortar joints and the 10% waste every bricklayer budgets for.</p>
+
+    <div class="card">
+      <form id="calc-form"></form>
+      <div id="results" class="results"></div>
+      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2>How to use this brick calculator</h2>
+    <p>Measure the area to be covered: length and height for a wall, length and width for a patio. Both in feet.</p>
+    <p>Choose the brick size. Modular bricks (3.6 x 2.25 x 8 inches) need about 7 per sq ft with a 3/8-inch mortar joint; standard bricks need about 7.5, and larger oversize bricks only 5-6.</p>
+    <p>Always add 10%: brick arrives damaged, corners get cut, and you will want matching bricks for future repairs - matching a production batch later is impossible.</p>
+
+    <div class="faq">
+      <h2>Brick calculator FAQ</h2>
+      <details><summary>How many bricks do I need for a 10x10 patio?</summary><p>A 10x10 patio is 100 sq ft. With modular bricks at 7 per sq ft, that is 700 bricks plus 10% waste: about 770 bricks total.</p></details>
+      <details><summary>How many bricks are in a cube or pallet?</summary><p>Bricks are typically packed 500 per cube/pallet (some suppliers pack 450-550). Order full pallets, then add loose bricks to match your calculated total.</p></details>
+      <details><summary>How much mortar do I need for a brick wall?</summary><p>One bag of mortar mix covers roughly 30-40 sq ft of brick wall at a standard 3/8-inch joint. For a 100 sq ft wall, plan on 3-4 bags.</p></details>
+    </div>
+
+    <div class="affiliate-box">
+      <h3>Supplies for this project</h3>
+      <ul>
+        <li><a href="#" rel="nofollow sponsored">Bricks and pavers (all styles)</a></li>
+        <li><a href="#" rel="nofollow sponsored">Mortar mix and masonry cement</a></li>
+        <li><a href="#" rel="nofollow sponsored">Trowels, levels and jointers</a></li>
+      </ul>
+    </div>
+
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="[object Object].html"><b>Concrete Calculator</b><span>Footings for the wall</span></a>
+      <a class="tool-card" href="[object Object].html"><b>Gravel Calculator</b><span>Base for brick paths</span></a>
+      <a class="tool-card" href="[object Object].html"><b>Tile Calculator</b><span>Alternative paving materials</span></a>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
+      <span><a href="../index.html">All calculators</a></span>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC = {
+      title: "Brick Calculator - How Many Bricks Do I Need for a Wall or Patio?",
+      fields: [
+        { name: "length", label: "Area length", type: "number", unit: "ft", value: 20, min: 1, max: 500, step: 0.5 },
+        { name: "height", label: "Area height", type: "number", unit: "ft", value: 3, min: 0.5, max: 50, step: 0.25 },
+        { name: "bricks", label: "Bricks per sq ft", type: "select", options: [ { value: 5, label: "5-6 (oversize brick)" }, { value: 7, label: "7 (modular, standard)" }, { value: 7.5, label: "7.5 (standard brick)" }, { value: 9, label: "9 (thin brick, 3/8 joint)" } ] }
+      ],
+      compute: function (v) {
+        var area = v.length * v.height;
+        var bricks = Math.ceil(area * v.bricks * 1.1);
+        return [
+          { label: "Area to cover", value: area, unit: "sq ft" },
+          { label: "Bricks needed", value: bricks, unit: "bricks", note: "includes 10% waste" }
+        ];
+      }
+    };
+  </script>
+  <script src="../js/calculator.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
