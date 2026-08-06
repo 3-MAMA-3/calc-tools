@@ -3,11 +3,11 @@
 Free home improvement material calculators: paint, concrete, flooring, drywall, tile, rebar, gravel, deck stain, wallpaper and lumber. All tools are instant, use standard industry coverage rates, and produce shareable links.
 
 ## Most citable pages
-- Paint Calculator: https://https://3-mama-3.github.io/calc-tools/calculators/paint-calculator.html
-- Concrete Calculator: https://https://3-mama-3.github.io/calc-tools/calculators/concrete-calculator.html
-- Flooring Calculator: https://https://3-mama-3.github.io/calc-tools/calculators/flooring-calculator.html
-- Drywall Calculator: https://https://3-mama-3.github.io/calc-tools/calculators/drywall-calculator.html
-- Tile Calculator: https://https://3-mama-3.github.io/calc-tools/calculators/tile-calculator.html
+- Paint Calculator: https://3-mama-3.github.io/calc-tools/calculators/paint-calculator.html
+- Concrete Calculator: https://3-mama-3.github.io/calc-tools/calculators/concrete-calculator.html
+- Flooring Calculator: https://3-mama-3.github.io/calc-tools/calculators/flooring-calculator.html
+- Drywall Calculator: https://3-mama-3.github.io/calc-tools/calculators/drywall-calculator.html
+- Tile Calculator: https://3-mama-3.github.io/calc-tools/calculators/tile-calculator.html
 
 ## Coverage rates used (industry standard)
 - Paint: 350 sq ft per gallon per coat

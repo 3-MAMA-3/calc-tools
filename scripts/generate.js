@@ -101,10 +101,13 @@ function buildPage(c) {
   <footer class="site">
     <div class="wrap cols">
       <span>&copy; <span id="year"></span> ${esc(CFG.SITE_NAME)}. Free home improvement calculators.</span>
-      <span><a href="../index.html">All calculators</a></span>
+      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
     </div>
   </footer>
 
+  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+  <!-- ADSENSE END -->
   <script>
     window.CALC = {
       title: "${esc(c.metaTitle)}",
@@ -124,7 +127,7 @@ ${fieldsJs}
 }
 
 function buildSitemap(slugs) {
-  const urls = ["", ...slugs.map(s => `${CFG.PAGES_DIR}/${s}.html`)].map(u => {
+  const urls = ["", "privacy.html", "contact.html", ...slugs.map(s => `${CFG.PAGES_DIR}/${s}.html`)].map(u => {
     const lastmod = u === "" ? new Date().toISOString().slice(0, 10) : fs.statSync(path.join(ROOT, u === "" ? "index.html" : u)).mtime.toISOString().slice(0, 10);
     return `  <url>\n    <loc>${CFG.BASE_URL}/${u}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`;
   }).join("\n");
