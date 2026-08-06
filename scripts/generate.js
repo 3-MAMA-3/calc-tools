@@ -88,6 +88,7 @@ function buildPage(c) {
   <link rel="canonical" href="${CFG.BASE_URL}/${CFG.PAGES_DIR}/${c.slug}.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>try{if(localStorage.getItem("theme")==="dark"||(!localStorage.getItem("theme")&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}</script>
   <script type="application/ld+json">
   ${faqJson}
   </script>
@@ -99,6 +100,12 @@ function buildPage(c) {
       <nav class="site">
         <a href="../index.html" data-i18n="nav.all">All calculators</a>
         <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+          <span class="tgl">
+            <svg class="ic icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="ic icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+        </button>
       </nav>
     </div>
   </header>
@@ -161,6 +168,7 @@ ${fieldsJs}
   <script src="../js/calculator.js"></script>
   <script src="../js/vendor/lenis.min.js"></script>
   <script src="../js/smooth.js"></script>
+  <script src="../js/theme.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

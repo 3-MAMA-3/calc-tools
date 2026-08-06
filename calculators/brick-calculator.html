@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/brick-calculator.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>try{if(localStorage.getItem("theme")==="dark"||(!localStorage.getItem("theme")&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}</script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many bricks do I need for a 10x10 patio?","acceptedAnswer":{"@type":"Answer","text":"A 10x10 patio is 100 sq ft. With modular bricks at 7 per sq ft, that is 700 bricks plus 10% waste: about 770 bricks total."}},{"@type":"Question","name":"How many bricks are in a cube or pallet?","acceptedAnswer":{"@type":"Answer","text":"Bricks are typically packed 500 per cube/pallet (some suppliers pack 450-550). Order full pallets, then add loose bricks to match your calculated total."}},{"@type":"Question","name":"How much mortar do I need for a brick wall?","acceptedAnswer":{"@type":"Answer","text":"One bag of mortar mix covers roughly 30-40 sq ft of brick wall at a standard 3/8-inch joint. For a 100 sq ft wall, plan on 3-4 bags."}}]}
   </script>
@@ -19,6 +20,12 @@
       <nav class="site">
         <a href="../index.html" data-i18n="nav.all">All calculators</a>
         <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+          <span class="tgl">
+            <svg class="ic icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="ic icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+        </button>
       </nav>
     </div>
   </header>
@@ -138,6 +145,7 @@
   <script src="../js/calculator.js"></script>
   <script src="../js/vendor/lenis.min.js"></script>
   <script src="../js/smooth.js"></script>
+  <script src="../js/theme.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
