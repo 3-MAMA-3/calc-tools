@@ -39,7 +39,7 @@
   }
 }
 * { box-sizing: border-box; }
-html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scrollbar-width: thin; scrollbar-color: #c7c7cc transparent; }
+html { background: var(--bg); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scrollbar-width: thin; scrollbar-color: #c7c7cc transparent; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-thumb { background: #c7c7cc; border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; transition: background 0.25s var(--ease); }
 ::-webkit-scrollbar-thumb:hover { background-color: #a1a1a6; }
@@ -387,7 +387,7 @@ footer.site {
   background: #161617;
   color: #86868b;
   font-size: 0.84rem;
-  padding: 44px 0 32px;
+  padding: 44px 0 64px;
 }
 footer.site::before {
   content: "";
