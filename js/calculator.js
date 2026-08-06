@@ -134,8 +134,10 @@
     if (t && t.classList.contains("copy-url") && shareEl) {
       shareEl.select();
       document.execCommand("copy");
-      t.textContent = "Copied!";
-      setTimeout(function () { t.textContent = "Copy link"; }, 1500);
+      var copyTxt = T ? T.t("share.copy") : "Copy";
+      var copiedTxt = T ? T.t("share.copied") : "Copied!";
+      t.textContent = copiedTxt;
+      setTimeout(function () { t.textContent = copyTxt; }, 1500);
     }
   });
 })();

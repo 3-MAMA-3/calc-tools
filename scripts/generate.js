@@ -69,13 +69,16 @@ function buildPage(c) {
   </header>
 
   <main class="wrap">
-    <h1 data-i18n="calc.${c.slug}.h1">${esc(c.h1)}</h1>
-    <p class="lead" data-i18n="calc.${c.slug}.lead">${esc(c.lead)}</p>
+    <section class="hero">
+      <h1 data-i18n="calc.${c.slug}.h1">${esc(c.h1)}</h1>
+      <p class="lead" data-i18n="calc.${c.slug}.lead">${esc(c.lead)}</p>
+    </section>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span></p>
+      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url" data-i18n="share.copy">Copy</button></div>
     </div>
 
     <div class="ad-slot" data-i18n="ad.label">Advertisement</div>

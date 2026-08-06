@@ -5,16 +5,10 @@
   var current = "en";
   var loaded = {};
 
-  function normalize(l) {
-    return l ? String(l).toLowerCase().split("-")[0] : "";
-  }
-
   function detect() {
     var saved = null;
     try { saved = localStorage.getItem(LS_KEY); } catch (e) {}
     if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
-    var base = normalize(navigator.language || navigator.userLanguage || "");
-    if (SUPPORTED.indexOf(base) !== -1) return base;
     return "en";
   }
 
