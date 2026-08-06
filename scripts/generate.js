@@ -17,7 +17,7 @@ function esc(s) {
 
 function buildFooter(base) {
   const toolLinks = BANK.map(c =>
-    `<a href="${base}${CFG.PAGES_DIR}/${c.slug}.html" data-i18n="calc.${c.slug}.h1">${esc(c.title)}</a>`
+    `<a href="${base}${CFG.PAGES_DIR}/${c.slug}.html" data-i18n="calc.${c.slug}.h1">${esc(c.h1)}</a>`
   ).join("\n            ");
   return `  <footer class="site">
     <div class="wrap">
