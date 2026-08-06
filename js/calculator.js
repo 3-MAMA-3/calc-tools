@@ -18,6 +18,39 @@
     return v.toLocaleString("en-US", { maximumFractionDigits: 2 });
   }
 
+  var prevVals = {};
+
+  function reduceMotion() {
+    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function animateVal(el, from, to) {
+    if (!isFinite(to)) {
+      el.textContent = fmt(to);
+      return;
+    }
+    if (reduceMotion() || from === to) {
+      el.textContent = fmt(to);
+      return;
+    }
+    var start = null;
+    var dur = 900;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(from + (to - from) * eased);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function setVal(span, idx, v) {
+    var from = prevVals[idx];
+    prevVals[idx] = v;
+    animateVal(span, from !== undefined ? from : 0, v);
+  }
+
   function readValue(f) {
     var el = document.getElementById("f-" + f.name);
     if (!el) return f.value;
@@ -53,13 +86,14 @@
     if (C.required && C.required.every(function (n) { return inputs[n] !== null && inputs[n] !== ""; })) {
       var out = C.compute(inputs);
       resultsEl.innerHTML = "";
-      out.forEach(function (r) {
+      out.forEach(function (r, i) {
         var row = document.createElement("div");
         row.className = "result";
         row.innerHTML =
           '<div class="r-label">' + tr(r.label, "res") + '</div><div><span class="val">' + fmt(r.value) +
           '</span><span class="unit-tag">' + trUnit(r.unit) + "</span>" +
           (r.note ? '<div class="note">' + trNote(r.note) + "</div>" : "") + "</div>";
+        setVal(row.querySelector(".val"), i, r.value);
         resultsEl.appendChild(row);
       });
       resultsEl.classList.add("show");

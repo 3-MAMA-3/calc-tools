@@ -129,6 +129,8 @@ ${fieldsJs}
     };
   </script>
   <script src="../js/calculator.js"></script>
+  <script src="../js/vendor/lenis.min.js"></script>
+  <script src="../js/smooth.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
