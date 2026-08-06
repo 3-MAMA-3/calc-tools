@@ -16,61 +16,67 @@
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Mulch Calculator</h1>
-    <p class="lead">Get the exact amount of mulch for your flower beds and borders - in cubic yards for bulk delivery or bags from the garden center.</p>
+    <h1 data-i18n="calc.mulch-calculator.h1">Mulch Calculator</h1>
+    <p class="lead" data-i18n="calc.mulch-calculator.lead">Get the exact amount of mulch for your flower beds and borders - in cubic yards for bulk delivery or bags from the garden center.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this mulch calculator</h2>
-    <p>Measure the length and width of each bed in feet. For round beds, use the widest diameter in both dimensions - the small corner loss is covered by your depth choice.</p>
-    <p>Pick a depth: 2 inches for a refreshing layer over existing mulch, 3 inches (recommended) for weed suppression, or 4 inches for new beds with heavy weeds.</p>
-    <p>One cubic yard covers roughly 108 sq ft at 3 inches deep. In bags, a 2 cu ft bag covers about 8 sq ft at 3 inches - so plan to grab 12-14 bags for a typical 100 sq ft bed.</p>
+    <h2 data-i18n="calc.mulch-calculator.ht">How to use this mulch calculator</h2>
+    <p data-i18n="calc.mulch-calculator.howto.0">Measure the length and width of each bed in feet. For round beds, use the widest diameter in both dimensions - the small corner loss is covered by your depth choice.</p>
+    <p data-i18n="calc.mulch-calculator.howto.1">Pick a depth: 2 inches for a refreshing layer over existing mulch, 3 inches (recommended) for weed suppression, or 4 inches for new beds with heavy weeds.</p>
+    <p data-i18n="calc.mulch-calculator.howto.2">One cubic yard covers roughly 108 sq ft at 3 inches deep. In bags, a 2 cu ft bag covers about 8 sq ft at 3 inches - so plan to grab 12-14 bags for a typical 100 sq ft bed.</p>
 
     <div class="faq">
-      <h2>Mulch calculator FAQ</h2>
-      <details><summary>How much mulch do I need for 100 square feet?</summary><p>At the recommended 3-inch depth, 100 sq ft needs 25 cu ft of mulch: about 13 bags of 2 cu ft, or just under one cubic yard.</p></details>
-      <details><summary>How many square feet does a yard of mulch cover?</summary><p>One cubic yard of mulch covers about 162 sq ft at 2 inches deep, 108 sq ft at 3 inches, and 81 sq ft at 4 inches.</p></details>
-      <details><summary>Should I buy mulch in bags or bulk?</summary><p>Bags are better for small beds and make spreading easier. For anything over 2 cubic yards, bulk delivery is usually 30-50% cheaper - check your supplier's per-yard price.</p></details>
+      <h2 data-i18n="calc.mulch-calculator.ft">Mulch calculator FAQ</h2>
+      <details><summary data-i18n="calc.mulch-calculator.faqs.0.q">How much mulch do I need for 100 square feet?</summary><p data-i18n="calc.mulch-calculator.faqs.0.a">At the recommended 3-inch depth, 100 sq ft needs 25 cu ft of mulch: about 13 bags of 2 cu ft, or just under one cubic yard.</p></details>
+      <details><summary data-i18n="calc.mulch-calculator.faqs.1.q">How many square feet does a yard of mulch cover?</summary><p data-i18n="calc.mulch-calculator.faqs.1.a">One cubic yard of mulch covers about 162 sq ft at 2 inches deep, 108 sq ft at 3 inches, and 81 sq ft at 4 inches.</p></details>
+      <details><summary data-i18n="calc.mulch-calculator.faqs.2.q">Should I buy mulch in bags or bulk?</summary><p data-i18n="calc.mulch-calculator.faqs.2.a">Bags are better for small beds and make spreading easier. For anything over 2 cubic yards, bulk delivery is usually 30-50% cheaper - check your supplier's per-yard price.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Bark mulch and wood chips (bags or bulk)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Landscape fabric for weed control</a></li>
-        <li><a href="#" rel="nofollow sponsored">Shovels, rakes and wheelbarrows</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.mulch-calculator.aff.0">Bark mulch and wood chips (bags or bulk)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.mulch-calculator.aff.1">Landscape fabric for weed control</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.mulch-calculator.aff.2">Shovels, rakes and wheelbarrows</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="[object Object].html"><b>Sod Calculator</b><span>Sod for the rest of the yard</span></a>
-      <a class="tool-card" href="[object Object].html"><b>Gravel Calculator</b><span>Rock for paths and beds</span></a>
-      <a class="tool-card" href="[object Object].html"><b>Tile Calculator</b><span>Stone tile for patios</span></a>
+      <a class="tool-card" href="sod-calculator.html"><b data-i18n="calc.sod-calculator.h1">Sod Calculator</b><span data-i18n="calc.mulch-calculator.related.0">Sod for the rest of the yard</span></a>
+      <a class="tool-card" href="gravel-calculator.html"><b data-i18n="calc.gravel-calculator.h1">Gravel Calculator</b><span data-i18n="calc.mulch-calculator.related.1">Rock for paths and beds</span></a>
+      <a class="tool-card" href="tile-calculator.html"><b data-i18n="calc.tile-calculator.h1">Tile Calculator</b><span data-i18n="calc.mulch-calculator.related.2">Stone tile for patios</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
   <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
   <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
       title: "Mulch Calculator - How Many Bags or Cubic Yards of Mulch Do I Need?",

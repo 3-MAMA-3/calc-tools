@@ -9,97 +9,95 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"How many boxes of flooring do I need for a 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"A 12x12 room is 144 sq ft. With the standard 10% waste allowance you need 158 sq ft of flooring, which is typically 5-6 boxes of laminate or vinyl depending on the box coverage."}},
-      {"@type":"Question","name":"How many square feet does a box of laminate flooring cover?","acceptedAnswer":{"@type":"Answer","text":"Most laminate boxes cover 15-25 sq ft, vinyl plank boxes usually cover 20-40 sq ft, and hardwood boxes about 20 sq ft. Check the box label for the exact coverage."}},
-      {"@type":"Question","name":"What waste percentage should I add for flooring?","acceptedAnswer":{"@type":"Answer","text":"Add 10% for square rooms with simple layouts. Use 15% for diagonal installation, rooms with many cuts (closets, doorways), or when laying planks in a long room where end cuts are unavoidable."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I buy extra flooring boxes?","acceptedAnswer":{"@type":"Answer","text":"Yes - at least one extra box. Shade variation between production batches means you often cannot match planks later, and repairs are much easier with matching spares on hand."}},{"@type":"Question","name":"How do I calculate flooring for an L-shaped room?","acceptedAnswer":{"@type":"Answer","text":"Split the room into two rectangles, calculate each separately, and add them together. Then apply your waste percentage to the combined total."}},{"@type":"Question","name":"Does underlayment come with laminate flooring?","acceptedAnswer":{"@type":"Answer","text":"Many laminate boxes include attached underlayment padding. Vinyl plank flooring sometimes has it built in too - check the product description so you do not double-buy."}}]}
   </script>
 </head>
 <body>
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Flooring Calculator</h1>
-    <p class="lead">Find out exactly how many cartons of laminate, vinyl or hardwood planks to buy - including the waste allowance for cuts, so you are never short mid-project.</p>
+    <h1 data-i18n="calc.flooring-calculator.h1">Flooring Calculator</h1>
+    <p class="lead" data-i18n="calc.flooring-calculator.lead">Find out exactly how many cartons of laminate, vinyl or hardwood planks to buy - including the waste allowance for cuts, so you are never short mid-project.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this flooring calculator</h2>
-    <p>Measure the length and width of the room in feet, check the coverage printed on your flooring box (usually 15-40 sq ft per carton), and pick a waste percentage. For rectangular rooms with standard plank installation, 10% is the safe default - you will use some for end cuts, ripped starter rows and a few replacement planks.</p>
-    <p>Buying one extra box is always worth it: flooring lots can vary in shade between production runs, and having spare planks makes future repairs trivial. If your room has lots of corners, a diagonal layout, or is longer than about 25 feet, use 15% waste.</p>
+    <h2 data-i18n="calc.flooring-calculator.ht">How to use this flooring calculator</h2>
+    <p data-i18n="calc.flooring-calculator.howto.0">Measure the length and width of the room in feet, check the coverage printed on your flooring box (usually 15-40 sq ft per carton), and pick a waste percentage. For rectangular rooms with standard plank installation, 10% is the safe default - you will use some for end cuts, ripped starter rows and a few replacement planks.</p>
+    <p data-i18n="calc.flooring-calculator.howto.1">Buying one extra box is always worth it: flooring lots can vary in shade between production runs, and having spare planks makes future repairs trivial. If your room has lots of corners, a diagonal layout, or is longer than about 25 feet, use 15% waste.</p>
 
     <div class="faq">
-      <h2>Flooring FAQ</h2>
-      <details><summary>Should I buy extra flooring boxes?</summary><p>Yes - at least one extra box. Shade variation between production batches means you often cannot match planks later, and repairs are much easier with matching spares on hand.</p></details>
-      <details><summary>How do I calculate flooring for an L-shaped room?</summary><p>Split the room into two rectangles, calculate each separately, and add them together. Then apply your waste percentage to the combined total.</p></details>
-      <details><summary>Does underlayment come with laminate flooring?</summary><p>Many laminate boxes include attached underlayment padding. Vinyl plank flooring sometimes has it built in too - check the product description so you do not double-buy.</p></details>
+      <h2 data-i18n="calc.flooring-calculator.ft">Flooring calculator FAQ</h2>
+      <details><summary data-i18n="calc.flooring-calculator.faqs.0.q">Should I buy extra flooring boxes?</summary><p data-i18n="calc.flooring-calculator.faqs.0.a">Yes - at least one extra box. Shade variation between production batches means you often cannot match planks later, and repairs are much easier with matching spares on hand.</p></details>
+      <details><summary data-i18n="calc.flooring-calculator.faqs.1.q">How do I calculate flooring for an L-shaped room?</summary><p data-i18n="calc.flooring-calculator.faqs.1.a">Split the room into two rectangles, calculate each separately, and add them together. Then apply your waste percentage to the combined total.</p></details>
+      <details><summary data-i18n="calc.flooring-calculator.faqs.2.q">Does underlayment come with laminate flooring?</summary><p data-i18n="calc.flooring-calculator.faqs.2.a">Many laminate boxes include attached underlayment padding. Vinyl plank flooring sometimes has it built in too - check the product description so you do not double-buy.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Laminate and vinyl plank flooring</a></li>
-        <li><a href="#" rel="nofollow sponsored">Underlayment and vapor barrier</a></li>
-        <li><a href="#" rel="nofollow sponsored">Spacers, tapping block and pull bar kits</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.flooring-calculator.aff.0">Laminate and vinyl plank flooring</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.flooring-calculator.aff.1">Underlayment and vapor barrier</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.flooring-calculator.aff.2">Spacers, tapping block and pull bar kits</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="tile-calculator.html"><b>Tile Calculator</b><span>How many tiles for floor or wall</span></a>
-      <a class="tool-card" href="paint-calculator.html"><b>Paint Calculator</b><span>Gallons of paint for your room</span></a>
-      <a class="tool-card" href="lumber-calculator.html"><b>Board Foot Calculator</b><span>Lumber volume and cost</span></a>
+      <a class="tool-card" href="tile-calculator.html"><b data-i18n="calc.tile-calculator.h1">Tile Calculator</b><span data-i18n="calc.flooring-calculator.related.0">How many tiles for floor or wall</span></a>
+      <a class="tool-card" href="paint-calculator.html"><b data-i18n="calc.paint-calculator.h1">Paint Calculator</b><span data-i18n="calc.flooring-calculator.related.1">Gallons of paint for your room</span></a>
+      <a class="tool-card" href="lumber-calculator.html"><b data-i18n="calc.lumber-calculator.h1">Board Foot Calculator</b><span data-i18n="calc.flooring-calculator.related.2">Lumber volume and cost</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
+  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+  <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
-      title: "Flooring Calculator",
+      title: "Flooring Calculator - How Many Boxes of Laminate or Vinyl Do I Need?",
       fields: [
-        { name: "length", label: "Room length", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
-        { name: "width", label: "Room width", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
-        { name: "coverage", label: "Box coverage", unit: "sq ft per box", value: 20, min: 5, max: 100, step: 1 },
+        { name: "length", label: "Room length", type: "number", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "width", label: "Room width", type: "number", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "coverage", label: "Box coverage", type: "number", unit: "sq ft per box", value: 20, min: 5, max: 100, step: 1 },
         { name: "waste", label: "Waste allowance", type: "select", options: [ { value: 5, label: "5% (simple layout)" }, { value: 10, label: "10% (recommended)" }, { value: 15, label: "15% (diagonal / many cuts)" } ] }
       ],
       compute: function (v) {
         var area = v.length * v.width;
-        var withWaste = area * (1 + v.waste / 100);
-        var boxes = Math.ceil(withWaste / v.coverage);
-        return [
-          { label: "Room area", value: area, unit: "sq ft" },
-          { label: "Area including waste", value: withWaste, unit: "sq ft", note: v.waste + "% waste" },
-          { label: "Cartons needed", value: boxes, unit: "boxes", note: "covers " + (boxes * v.coverage).toFixed(0) + " sq ft" }
-        ];
+var withWaste = area * (1 + v.waste / 100);
+var boxes = Math.ceil(withWaste / v.coverage);
+return [
+  { label: "Room area", value: area, unit: "sq ft" },
+  { label: "Area including waste", value: withWaste, unit: "sq ft", note: v.waste + "% waste" },
+  { label: "Cartons needed", value: boxes, unit: "boxes", note: "covers " + (boxes * v.coverage).toFixed(0) + " sq ft" }
+];
       }
     };
   </script>
   <script src="../js/calculator.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-  <!-- ADSENSE END -->
 </body>
 </html>

@@ -3,109 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Concrete Calculator - Cubic Yards &amp; Bags for Slab, Footing or Pad</title>
+  <title>Concrete Calculator - Cubic Yards &amp;amp; Bags for Slab, Footing or Pad</title>
   <meta name="description" content="Free concrete calculator: figure out cubic yards and the number of 40, 60 or 80 lb bags for any slab, pad, footing or patio. Includes waste allowance.">
   <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/concrete-calculator.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"How many 80 lb bags of concrete do I need for 1 cubic yard?","acceptedAnswer":{"@type":"Answer","text":"A cubic yard equals 27 cubic feet. One 80 lb bag of concrete mix yields about 0.60 cubic feet, so you need roughly 45 bags of 80 lb mix per cubic yard."}},
-      {"@type":"Question","name":"How much concrete do I need for a 10x10 slab?","acceptedAnswer":{"@type":"Answer","text":"A 10x10 slab that is 4 inches thick needs 1.23 cubic yards of concrete (about 123 cubic feet), which is 56 bags of 80 lb mix or a ready-mix delivery."}},
-      {"@type":"Question","name":"Should I add extra concrete for waste?","acceptedAnswer":{"@type":"Answer","text":"Yes - add 5-10% to your total to cover spillage, uneven subgrade and small miscalculations. For larger pours, 5% is usually enough; for bag pours, round up to whole bags anyway."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How thick should a concrete slab be?","acceptedAnswer":{"@type":"Answer","text":"4 inches for patios and walkways, 4-6 inches for shed and garage floors, and 8-12 inches for driveways or load-bearing footings. Reinforce with rebar or wire mesh on thicker slabs."}},{"@type":"Question","name":"How many cubic feet is in a cubic yard?","acceptedAnswer":{"@type":"Answer","text":"27 cubic feet (3 x 3 x 3). To convert, divide the volume in cubic feet by 27."}},{"@type":"Question","name":"How much does a cubic yard of concrete cost?","acceptedAnswer":{"@type":"Answer","text":"Ready-mix concrete typically costs $130-$180 per cubic yard in the US (2025-2026 prices), with a delivery minimum fee on top. Bags of mix usually cost more per yard but avoid the minimum."}}]}
   </script>
 </head>
 <body>
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Concrete Calculator</h1>
-    <p class="lead">Work out exactly how much concrete you need for a slab, patio, footing or shed pad - in cubic feet, cubic yards, and the number of 40/60/80 lb bags.</p>
+    <h1 data-i18n="calc.concrete-calculator.h1">Concrete Calculator</h1>
+    <p class="lead" data-i18n="calc.concrete-calculator.lead">Work out exactly how much concrete you need for a slab, patio, footing or shed pad - in cubic feet, cubic yards, and the number of 40/60/80 lb bags.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this concrete calculator</h2>
-    <p>Measure the length and width of your pour in feet and its depth in inches. Pick your waste allowance (5% is standard) and the bag size you plan to use. The calculator converts everything to cubic yards and tells you how many bags to buy - or whether it is worth ordering a ready-mix truck instead.</p>
-    <p>As a rule of thumb, anything over about 1 cubic yard (45+ bags) is usually cheaper and less back-breaking with a concrete delivery. If you are mixing by hand, rent a mixer for anything bigger than a handful of bags.</p>
+    <h2 data-i18n="calc.concrete-calculator.ht">How to use this concrete calculator</h2>
+    <p data-i18n="calc.concrete-calculator.howto.0">Measure the length and width of your pour in feet and its depth in inches. Pick your waste allowance (5% is standard) and the bag size you plan to use. The calculator converts everything to cubic yards and tells you how many bags to buy - or whether it is worth ordering a ready-mix truck instead.</p>
+    <p data-i18n="calc.concrete-calculator.howto.1">As a rule of thumb, anything over about 1 cubic yard (45+ bags) is usually cheaper and less back-breaking with a concrete delivery. If you are mixing by hand, rent a mixer for anything bigger than a handful of bags.</p>
 
     <div class="faq">
-      <h2>Concrete FAQ</h2>
-      <details><summary>How thick should a concrete slab be?</summary><p>4 inches for patios and walkways, 4-6 inches for shed and garage floors, and 8-12 inches for driveways or load-bearing footings. Reinforce with rebar or wire mesh on thicker slabs.</p></details>
-      <details><summary>How many cubic feet is in a cubic yard?</summary><p>27 cubic feet (3 x 3 x 3). To convert, divide the volume in cubic feet by 27.</p></details>
-      <details><summary>How much does a cubic yard of concrete cost?</summary><p>Ready-mix concrete typically costs $130-$180 per cubic yard in the US (2025-2026 prices), with a delivery minimum fee on top. Bags of mix usually cost more per yard but avoid the minimum.</p></details>
+      <h2 data-i18n="calc.concrete-calculator.ft">Concrete calculator FAQ</h2>
+      <details><summary data-i18n="calc.concrete-calculator.faqs.0.q">How thick should a concrete slab be?</summary><p data-i18n="calc.concrete-calculator.faqs.0.a">4 inches for patios and walkways, 4-6 inches for shed and garage floors, and 8-12 inches for driveways or load-bearing footings. Reinforce with rebar or wire mesh on thicker slabs.</p></details>
+      <details><summary data-i18n="calc.concrete-calculator.faqs.1.q">How many cubic feet is in a cubic yard?</summary><p data-i18n="calc.concrete-calculator.faqs.1.a">27 cubic feet (3 x 3 x 3). To convert, divide the volume in cubic feet by 27.</p></details>
+      <details><summary data-i18n="calc.concrete-calculator.faqs.2.q">How much does a cubic yard of concrete cost?</summary><p data-i18n="calc.concrete-calculator.faqs.2.a">Ready-mix concrete typically costs $130-$180 per cubic yard in the US (2025-2026 prices), with a delivery minimum fee on top. Bags of mix usually cost more per yard but avoid the minimum.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Concrete mix bags (40/60/80 lb)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Rebar and wire mesh for reinforcement</a></li>
-        <li><a href="#" rel="nofollow sponsored">Concrete trowels and screed boards</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.concrete-calculator.aff.0">Concrete mix bags (40/60/80 lb)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.concrete-calculator.aff.1">Rebar and wire mesh for reinforcement</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.concrete-calculator.aff.2">Concrete trowels and screed boards</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="gravel-calculator.html"><b>Gravel Calculator</b><span>Tons of rock or gravel needed</span></a>
-      <a class="tool-card" href="rebar-calculator.html"><b>Rebar Calculator</b><span>Bars and spacing for a slab</span></a>
-      <a class="tool-card" href="lumber-calculator.html"><b>Board Foot Calculator</b><span>Lumber volume and cost</span></a>
+      <a class="tool-card" href="gravel-calculator.html"><b data-i18n="calc.gravel-calculator.h1">Gravel Calculator</b><span data-i18n="calc.concrete-calculator.related.0">Tons of rock or gravel needed</span></a>
+      <a class="tool-card" href="rebar-calculator.html"><b data-i18n="calc.rebar-calculator.h1">Rebar Calculator</b><span data-i18n="calc.concrete-calculator.related.1">Bars and spacing for a slab</span></a>
+      <a class="tool-card" href="lumber-calculator.html"><b data-i18n="calc.lumber-calculator.h1">Board Foot Calculator</b><span data-i18n="calc.concrete-calculator.related.2">Lumber volume and cost</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
+  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+  <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
-      title: "Concrete Calculator",
+      title: "Concrete Calculator - Cubic Yards &amp;amp; Bags for Slab, Footing or Pad",
       fields: [
-        { name: "length", label: "Length", unit: "ft", value: 10, min: 0.5, max: 500, step: 0.5 },
-        { name: "width", label: "Width", unit: "ft", value: 10, min: 0.5, max: 500, step: 0.5 },
-        { name: "depth", label: "Depth", unit: "in", value: 4, min: 1, max: 48, step: 0.5 },
+        { name: "length", label: "Length", type: "number", unit: "ft", value: 10, min: 0.5, max: 500, step: 0.5 },
+        { name: "width", label: "Width", type: "number", unit: "ft", value: 10, min: 0.5, max: 500, step: 0.5 },
+        { name: "depth", label: "Depth", type: "number", unit: "in", value: 4, min: 1, max: 48, step: 0.5 },
         { name: "waste", label: "Waste allowance", type: "select", options: [ { value: 0, label: "0%" }, { value: 5, label: "5% (recommended)" }, { value: 10, label: "10%" }, { value: 15, label: "15%" } ] },
         { name: "bag", label: "Bag size", type: "select", options: [ { value: 40, label: "40 lb (0.30 cu ft)" }, { value: 60, label: "60 lb (0.45 cu ft)" }, { value: 80, label: "80 lb (0.60 cu ft)" }, { value: 0, label: "Ready-mix delivery" } ] }
       ],
       compute: function (v) {
         var cuft = v.length * v.width * (v.depth / 12) * (1 + v.waste / 100);
-        var yards = cuft / 27;
-        var out = [
-          { label: "Volume needed", value: cuft, unit: "cu ft", note: "includes " + v.waste + "% waste" },
-          { label: "Concrete needed", value: yards, unit: "cu yd" }
-        ];
-        if (v.bag > 0) {
-          var bagCuft = v.bag === 40 ? 0.30 : v.bag === 60 ? 0.45 : 0.60;
-          out.push({ label: v.bag + " lb bags needed", value: Math.ceil(cuft / bagCuft), unit: "bags" });
-        } else {
-          out.push({ label: "Order", value: Math.ceil(yards), unit: "cu yd", note: "round up for delivery" });
-        }
-        return out;
+var yards = cuft / 27;
+var out = [
+  { label: "Volume needed", value: cuft, unit: "cu ft", note: "includes " + v.waste + "% waste" },
+  { label: "Concrete needed", value: yards, unit: "cu yd" }
+];
+if (v.bag > 0) {
+  var bagCuft = v.bag === 40 ? 0.30 : v.bag === 60 ? 0.45 : 0.60;
+  out.push({ label: v.bag + " lb bags needed", value: Math.ceil(cuft / bagCuft), unit: "bags" });
+} else {
+  out.push({ label: "Order", value: Math.ceil(yards), unit: "cu yd", note: "round up for delivery" });
+}
+return out;
       }
     };
   </script>
   <script src="../js/calculator.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-  <!-- ADSENSE END -->
 </body>
 </html>

@@ -9,100 +9,98 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"How many sheets of drywall do I need for a 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"A 12x12 room with 8-foot walls and a ceiling needs about 21 sheets of 4x8 drywall: 16 sheets for the walls, 5 sheets for the ceiling, allowing for standard cuts."}},
-      {"@type":"Question","name":"How much does one sheet of drywall cover?","acceptedAnswer":{"@type":"Answer","text":"A 4x8 sheet covers 32 sq ft, 4x9 covers 36 sq ft, 4x10 covers 40 sq ft and 4x12 covers 48 sq ft. Divide your total area by the sheet size and round up."}},
-      {"@type":"Question","name":"Should I use 4x8 or 4x12 drywall sheets?","acceptedAnswer":{"@type":"Answer","text":"4x8 sheets are easiest to handle alone. Use 4x10 or 4x12 sheets when you have walls taller than 8 feet to reduce seams - but they are heavy, so bring a helper or rent a panel lift."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much drywall do I need for 1000 square feet?","acceptedAnswer":{"@type":"Answer","text":"Divide 1000 by your sheet area: that is about 31 sheets of 4x8 drywall (32 sq ft each), or 25 sheets of 4x10. Add 10% for waste and cuts."}},{"@type":"Question","name":"What thickness drywall should I use?","acceptedAnswer":{"@type":"Answer","text":"1/2-inch standard drywall for most walls and ceilings, 5/8-inch for fire-rated separations and garage ceilings, and 1/4-inch for skimming over existing walls."}},{"@type":"Question","name":"How much does drywall installation cost?","acceptedAnswer":{"@type":"Answer","text":"Installed cost (materials + labor) typically runs $1.50-$3.50 per sq ft in the US, depending on location and finish level. DIY sheet prices range from $12-$20 for 4x8."}}]}
   </script>
 </head>
 <body>
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Drywall Calculator</h1>
-    <p class="lead">Enter your room size and find out exactly how many drywall sheets you need for walls and ceiling - plus the area you will actually cover.</p>
+    <h1 data-i18n="calc.drywall-calculator.h1">Drywall Calculator</h1>
+    <p class="lead" data-i18n="calc.drywall-calculator.lead">Enter your room size and find out exactly how many drywall sheets you need for walls and ceiling - plus the area you will actually cover.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this drywall calculator</h2>
-    <p>Measure the length, width and height of the room, choose your sheet size, and subtract any large openings (window and door openings). The calculator adds the walls and (optionally) the ceiling, divides by the sheet coverage, and rounds up to whole sheets.</p>
-    <p>Always add one or two extra sheets to your final count for mistakes, damaged sheets and tricky corners. For the ceiling, plan sheets to run perpendicular to the joists, and use the largest sheet size you can safely carry - fewer seams means less taping and mudding.</p>
+    <h2 data-i18n="calc.drywall-calculator.ht">How to use this drywall calculator</h2>
+    <p data-i18n="calc.drywall-calculator.howto.0">Measure the length, width and height of the room, choose your sheet size, and subtract any large openings (window and door openings). The calculator adds the walls and (optionally) the ceiling, divides by the sheet coverage, and rounds up to whole sheets.</p>
+    <p data-i18n="calc.drywall-calculator.howto.1">Always add one or two extra sheets to your final count for mistakes, damaged sheets and tricky corners. For the ceiling, plan sheets to run perpendicular to the joists, and use the largest sheet size you can safely carry - fewer seams means less taping and mudding.</p>
 
     <div class="faq">
-      <h2>Drywall FAQ</h2>
-      <details><summary>How much drywall do I need for 1000 square feet?</summary><p>Divide 1000 by your sheet area: that is about 31 sheets of 4x8 drywall (32 sq ft each), or 25 sheets of 4x10. Add 10% for waste and cuts.</p></details>
-      <details><summary>What thickness drywall should I use?</summary><p>1/2-inch standard drywall for most walls and ceilings, 5/8-inch for fire-rated separations and garage ceilings, and 1/4-inch for skimming over existing walls.</p></details>
-      <details><summary>How much does drywall installation cost?</summary><p>Installed cost (materials + labor) typically runs $1.50-$3.50 per sq ft in the US, depending on location and finish level. DIY sheet prices range from $12-$20 for 4x8.</p></details>
+      <h2 data-i18n="calc.drywall-calculator.ft">Drywall calculator FAQ</h2>
+      <details><summary data-i18n="calc.drywall-calculator.faqs.0.q">How much drywall do I need for 1000 square feet?</summary><p data-i18n="calc.drywall-calculator.faqs.0.a">Divide 1000 by your sheet area: that is about 31 sheets of 4x8 drywall (32 sq ft each), or 25 sheets of 4x10. Add 10% for waste and cuts.</p></details>
+      <details><summary data-i18n="calc.drywall-calculator.faqs.1.q">What thickness drywall should I use?</summary><p data-i18n="calc.drywall-calculator.faqs.1.a">1/2-inch standard drywall for most walls and ceilings, 5/8-inch for fire-rated separations and garage ceilings, and 1/4-inch for skimming over existing walls.</p></details>
+      <details><summary data-i18n="calc.drywall-calculator.faqs.2.q">How much does drywall installation cost?</summary><p data-i18n="calc.drywall-calculator.faqs.2.a">Installed cost (materials + labor) typically runs $1.50-$3.50 per sq ft in the US, depending on location and finish level. DIY sheet prices range from $12-$20 for 4x8.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Drywall sheets (all common sizes)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Drywall screws and joint tape</a></li>
-        <li><a href="#" rel="nofollow sponsored">Joint compound and mud pans</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.drywall-calculator.aff.0">Drywall sheets (all common sizes)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.drywall-calculator.aff.1">Drywall screws and joint tape</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.drywall-calculator.aff.2">Joint compound and mud pans</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="paint-calculator.html"><b>Paint Calculator</b><span>Gallons of paint for walls</span></a>
-      <a class="tool-card" href="wallpaper-calculator.html"><b>Wallpaper Calculator</b><span>Rolls needed for a room</span></a>
-      <a class="tool-card" href="flooring-calculator.html"><b>Flooring Calculator</b><span>Cartons of planks needed</span></a>
+      <a class="tool-card" href="paint-calculator.html"><b data-i18n="calc.paint-calculator.h1">Paint Calculator</b><span data-i18n="calc.drywall-calculator.related.0">Gallons of paint for walls</span></a>
+      <a class="tool-card" href="wallpaper-calculator.html"><b data-i18n="calc.wallpaper-calculator.h1">Wallpaper Calculator</b><span data-i18n="calc.drywall-calculator.related.1">Rolls needed for a room</span></a>
+      <a class="tool-card" href="flooring-calculator.html"><b data-i18n="calc.flooring-calculator.h1">Flooring Calculator</b><span data-i18n="calc.drywall-calculator.related.2">Cartons of planks needed</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
+  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+  <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
-      title: "Drywall Calculator",
+      title: "Drywall Calculator - How Many Sheets Do I Need?",
       fields: [
-        { name: "length", label: "Room length", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
-        { name: "width", label: "Room width", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
-        { name: "height", label: "Wall height", unit: "ft", value: 8, min: 6, max: 20, step: 0.5 },
-        { name: "openings", label: "Window & door area", unit: "sq ft", value: 50, min: 0, max: 2000, step: 5 },
-        { name: "ceiling", label: "Cover ceiling?", type: "select", options: [ { value: "yes", label: "Yes" }, { value: "no", label: "No" } ] },
+        { name: "length", label: "Room length", type: "number", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "width", label: "Room width", type: "number", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "height", label: "Wall height", type: "number", unit: "ft", value: 8, min: 6, max: 20, step: 0.5 },
+        { name: "openings", label: "Window &amp; door area", type: "number", unit: "sq ft", value: 50, min: 0, max: 2000, step: 5 },
+        { name: "ceiling", label: "Cover ceiling?", type: "select", options: [ { value: yes, label: "Yes" }, { value: no, label: "No" } ] },
         { name: "sheet", label: "Sheet size", type: "select", options: [ { value: 32, label: "4x8 (32 sq ft)" }, { value: 36, label: "4x9 (36 sq ft)" }, { value: 40, label: "4x10 (40 sq ft)" }, { value: 48, label: "4x12 (48 sq ft)" } ] }
       ],
       compute: function (v) {
         var walls = 2 * (v.length + v.width) * v.height;
-        var ceiling = v.ceiling === "yes" ? v.length * v.width : 0;
-        var area = walls + ceiling - v.openings;
-        var sheets = Math.ceil(area / v.sheet);
-        return [
-          { label: "Total area (walls + ceiling)", value: area, unit: "sq ft", note: "openings subtracted" },
-          { label: "Drywall sheets needed", value: sheets, unit: "sheets", note: v.sheet + " sq ft each" },
-          { label: "Waste-safe count (+1)", value: sheets + 1, unit: "sheets", note: "recommended" }
-        ];
+var ceiling = v.ceiling === "yes" ? v.length * v.width : 0;
+var area = walls + ceiling - v.openings;
+var sheets = Math.ceil(area / v.sheet);
+return [
+  { label: "Total area (walls + ceiling)", value: area, unit: "sq ft", note: "openings subtracted" },
+  { label: "Drywall sheets needed", value: sheets, unit: "sheets", note: v.sheet + " sq ft each" },
+  { label: "Waste-safe count (+1)", value: sheets + 1, unit: "sheets", note: "recommended" }
+];
       }
     };
   </script>
   <script src="../js/calculator.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-  <!-- ADSENSE END -->
 </body>
 </html>

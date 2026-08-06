@@ -9,96 +9,94 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"How much stain do I need for a 12x12 deck?","acceptedAnswer":{"@type":"Answer","text":"A 12x12 deck is 144 sq ft. With typical stain coverage of 200-300 sq ft per gallon, you need about 1 gallon for the first coat, or 2 gallons for two coats on new wood."}},
-      {"@type":"Question","name":"How many square feet does a gallon of deck stain cover?","acceptedAnswer":{"@type":"Answer","text":"Most quality deck stains cover 200-300 sq ft per gallon on smooth wood. Rough-sawn or weathered wood absorbs 30-50% more, so coverage drops to 150-200 sq ft per gallon."}},
-      {"@type":"Question","name":"Should I use one or two coats of deck stain?","acceptedAnswer":{"@type":"Answer","text":"New or bare wood needs two coats: the first soaks in, the second forms the protective film. Already-stained decks usually only need one refreshing coat every 2-3 years."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How often should I restain my deck?","acceptedAnswer":{"@type":"Answer","text":"Every 2-3 years for semi-transparent stains, and every 3-5 years for solid stains. Water-beading test: if water soaks in rather than beading, it is time to restain."}},{"@type":"Question","name":"Should I paint or stain my deck?","acceptedAnswer":{"@type":"Answer","text":"Stain penetrates and lets the wood breathe; paint forms a film that can peel on decks. For most outdoor decks, a good semi-transparent or solid stain is the better, lower-maintenance choice."}},{"@type":"Question","name":"Can I stain over old stain?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the old stain is clean, dry and still bonded. Power-wash, sand lightly, and apply a matching stain. Only strip completely if the old finish is flaking or the wood has grayed badly."}}]}
   </script>
 </head>
 <body>
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Deck Stain Calculator</h1>
-    <p class="lead">Find out how many gallons of deck stain or sealer you need - board surface, railings, and multiple coats all included.</p>
+    <h1 data-i18n="calc.deck-stain-calculator.h1">Deck Stain Calculator</h1>
+    <p class="lead" data-i18n="calc.deck-stain-calculator.lead">Find out how many gallons of deck stain or sealer you need - board surface, railings, and multiple coats all included.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this deck stain calculator</h2>
-    <p>Measure the deck surface (length x width). Add railings or steps to include their extra surface area. Pick the coverage of the stain you plan to buy - most cans state the expected sq ft per gallon for smooth wood - and choose one or two coats.</p>
-    <p>New, bare or rough-sawn wood always needs two coats and drinks stain far faster than a previously sealed deck. When in doubt, buy one extra quart: partial cans are nearly impossible to color-match later because the tinting varies between batches.</p>
+    <h2 data-i18n="calc.deck-stain-calculator.ht">How to use this deck stain calculator</h2>
+    <p data-i18n="calc.deck-stain-calculator.howto.0">Measure the deck surface (length x width). Add railings or steps to include their extra surface area. Pick the coverage of the stain you plan to buy - most cans state the expected sq ft per gallon for smooth wood - and choose one or two coats.</p>
+    <p data-i18n="calc.deck-stain-calculator.howto.1">New, bare or rough-sawn wood always needs two coats and drinks stain far faster than a previously sealed deck. When in doubt, buy one extra quart: partial cans are nearly impossible to color-match later because the tinting varies between batches.</p>
 
     <div class="faq">
-      <h2>Deck stain FAQ</h2>
-      <details><summary>How often should I restain my deck?</summary><p>Every 2-3 years for semi-transparent stains, and every 3-5 years for solid stains. Water-beading test: if water soaks in rather than beading, it is time to restain.</p></details>
-      <details><summary>Should I paint or stain my deck?</summary><p>Stain penetrates and lets the wood breathe; paint forms a film that can peel on decks. For most outdoor decks, a good semi-transparent or solid stain is the better, lower-maintenance choice.</p></details>
-      <details><summary>Can I stain over old stain?</summary><p>Yes, if the old stain is clean, dry and still bonded. Power-wash, sand lightly, and apply a matching stain. Only strip completely if the old finish is flaking or the wood has grayed badly.</p></details>
+      <h2 data-i18n="calc.deck-stain-calculator.ft">Deck stain calculator FAQ</h2>
+      <details><summary data-i18n="calc.deck-stain-calculator.faqs.0.q">How often should I restain my deck?</summary><p data-i18n="calc.deck-stain-calculator.faqs.0.a">Every 2-3 years for semi-transparent stains, and every 3-5 years for solid stains. Water-beading test: if water soaks in rather than beading, it is time to restain.</p></details>
+      <details><summary data-i18n="calc.deck-stain-calculator.faqs.1.q">Should I paint or stain my deck?</summary><p data-i18n="calc.deck-stain-calculator.faqs.1.a">Stain penetrates and lets the wood breathe; paint forms a film that can peel on decks. For most outdoor decks, a good semi-transparent or solid stain is the better, lower-maintenance choice.</p></details>
+      <details><summary data-i18n="calc.deck-stain-calculator.faqs.2.q">Can I stain over old stain?</summary><p data-i18n="calc.deck-stain-calculator.faqs.2.a">Yes, if the old stain is clean, dry and still bonded. Power-wash, sand lightly, and apply a matching stain. Only strip completely if the old finish is flaking or the wood has grayed badly.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Deck stain and sealer (all tones)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Deck cleaner and brightener</a></li>
-        <li><a href="#" rel="nofollow sponsored">Stain pads, brushes and rollers</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.deck-stain-calculator.aff.0">Deck stain and sealer (all tones)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.deck-stain-calculator.aff.1">Deck cleaner and brightener</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.deck-stain-calculator.aff.2">Stain pads, brushes and rollers</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="paint-calculator.html"><b>Paint Calculator</b><span>Gallons of paint for walls</span></a>
-      <a class="tool-card" href="gravel-calculator.html"><b>Gravel Calculator</b><span>Rock for under-deck drainage</span></a>
-      <a class="tool-card" href="lumber-calculator.html"><b>Board Foot Calculator</b><span>Decking board volume</span></a>
+      <a class="tool-card" href="paint-calculator.html"><b data-i18n="calc.paint-calculator.h1">Paint Calculator</b><span data-i18n="calc.deck-stain-calculator.related.0">Gallons of paint for walls</span></a>
+      <a class="tool-card" href="gravel-calculator.html"><b data-i18n="calc.gravel-calculator.h1">Gravel Calculator</b><span data-i18n="calc.deck-stain-calculator.related.1">Rock for under-deck drainage</span></a>
+      <a class="tool-card" href="lumber-calculator.html"><b data-i18n="calc.lumber-calculator.h1">Board Foot Calculator</b><span data-i18n="calc.deck-stain-calculator.related.2">Decking board volume</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
+  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+  <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
-      title: "Deck Stain Calculator",
+      title: "Deck Stain Calculator - How Much Stain Do I Need?",
       fields: [
-        { name: "length", label: "Deck length", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
-        { name: "width", label: "Deck width", unit: "ft", value: 12, min: 1, max: 100, step: 0.5 },
-        { name: "extras", label: "Railings & steps", type: "select", options: [ { value: 0, label: "None" }, { value: 20, label: "Basic railing" }, { value: 35, label: "Railings + steps" }, { value: 50, label: "Full railing, steps & fascia" } ] },
+        { name: "length", label: "Deck length", type: "number", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
+        { name: "width", label: "Deck width", type: "number", unit: "ft", value: 12, min: 1, max: 100, step: 0.5 },
+        { name: "extras", label: "Railings &amp; steps", type: "select", options: [ { value: 0, label: "None" }, { value: 20, label: "Basic railing" }, { value: 35, label: "Railings + steps" }, { value: 50, label: "Full railing, steps &amp; fascia" } ] },
         { name: "coverage", label: "Stain coverage", type: "select", options: [ { value: 300, label: "300 sq ft/gal (smooth wood)" }, { value: 250, label: "250 sq ft/gal" }, { value: 200, label: "200 sq ft/gal (rough wood)" }, { value: 150, label: "150 sq ft/gal (weathered wood)" } ] },
         { name: "coats", label: "Coats", type: "select", options: [ { value: 1, label: "1 coat (refreshing)" }, { value: 2, label: "2 coats (new wood)" } ] }
       ],
       compute: function (v) {
         var area = v.length * v.width * (1 + v.extras / 100);
-        var gallons = area * v.coats / v.coverage;
-        return [
-          { label: "Surface to stain", value: area, unit: "sq ft" },
-          { label: "Stain needed", value: Math.ceil(gallons * 4) / 4, unit: "gallons", note: "rounded up to nearest quart" }
-        ];
+var gallons = area * v.coats / v.coverage;
+return [
+  { label: "Surface to stain", value: area, unit: "sq ft" },
+  { label: "Stain needed", value: Math.ceil(gallons * 4) / 4, unit: "gallons", note: "rounded up to nearest quart" }
+];
       }
     };
   </script>
   <script src="../js/calculator.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-  <!-- ADSENSE END -->
 </body>
 </html>

@@ -16,61 +16,67 @@
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Carpet Calculator</h1>
-    <p class="lead">Find out how much carpet to order for a room - in square feet and square yards, the two units every carpet store quotes in.</p>
+    <h1 data-i18n="calc.carpet-calculator.h1">Carpet Calculator</h1>
+    <p class="lead" data-i18n="calc.carpet-calculator.lead">Find out how much carpet to order for a room - in square feet and square yards, the two units every carpet store quotes in.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this carpet calculator</h2>
-    <p>Measure the room length and width in feet. Carpet is sold in 12-foot-wide rolls, so the width of your room determines how much is wasted as trimmings.</p>
-    <p>If either dimension exceeds 12 feet, the installer must seam two pieces - add one extra foot to the length for every seam to allow pattern matching and trimming.</p>
-    <p>Carpet is quoted in square yards: divide your square footage by 9. Always order 5-10% extra, because installers cannot splice a small missing piece invisibly.</p>
+    <h2 data-i18n="calc.carpet-calculator.ht">How to use this carpet calculator</h2>
+    <p data-i18n="calc.carpet-calculator.howto.0">Measure the room length and width in feet. Carpet is sold in 12-foot-wide rolls, so the width of your room determines how much is wasted as trimmings.</p>
+    <p data-i18n="calc.carpet-calculator.howto.1">If either dimension exceeds 12 feet, the installer must seam two pieces - add one extra foot to the length for every seam to allow pattern matching and trimming.</p>
+    <p data-i18n="calc.carpet-calculator.howto.2">Carpet is quoted in square yards: divide your square footage by 9. Always order 5-10% extra, because installers cannot splice a small missing piece invisibly.</p>
 
     <div class="faq">
-      <h2>Carpet calculator FAQ</h2>
-      <details><summary>How many square yards is a 12x12 room?</summary><p>A 12x12 room is 144 sq ft, which is exactly 16 square yards of carpet before waste. With a plain carpet and clean seams, 16-18 sq yd is a safe order.</p></details>
-      <details><summary>Why do carpet installers charge for waste?</summary><p>Carpet comes in 12-foot-wide rolls, so a 14x12 room needs a 14-foot length of a 12-foot-wide roll: 168 sq ft of carpet for a 144 sq ft floor. That off-cut is still charged.</p></details>
-      <details><summary>How much does carpet cost per square foot?</summary><p>Installed carpet typically runs $3-$8 per sq ft in 2025-2026: $2-$4 for materials and $1.50-$3 for installation, padding and removal of the old carpet.</p></details>
+      <h2 data-i18n="calc.carpet-calculator.ft">Carpet calculator FAQ</h2>
+      <details><summary data-i18n="calc.carpet-calculator.faqs.0.q">How many square yards is a 12x12 room?</summary><p data-i18n="calc.carpet-calculator.faqs.0.a">A 12x12 room is 144 sq ft, which is exactly 16 square yards of carpet before waste. With a plain carpet and clean seams, 16-18 sq yd is a safe order.</p></details>
+      <details><summary data-i18n="calc.carpet-calculator.faqs.1.q">Why do carpet installers charge for waste?</summary><p data-i18n="calc.carpet-calculator.faqs.1.a">Carpet comes in 12-foot-wide rolls, so a 14x12 room needs a 14-foot length of a 12-foot-wide roll: 168 sq ft of carpet for a 144 sq ft floor. That off-cut is still charged.</p></details>
+      <details><summary data-i18n="calc.carpet-calculator.faqs.2.q">How much does carpet cost per square foot?</summary><p data-i18n="calc.carpet-calculator.faqs.2.a">Installed carpet typically runs $3-$8 per sq ft in 2025-2026: $2-$4 for materials and $1.50-$3 for installation, padding and removal of the old carpet.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Carpet by the square yard (all styles)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Carpet padding and tack strips</a></li>
-        <li><a href="#" rel="nofollow sponsored">Carpet stretcher and seam irons</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.carpet-calculator.aff.0">Carpet by the square yard (all styles)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.carpet-calculator.aff.1">Carpet padding and tack strips</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.carpet-calculator.aff.2">Carpet stretcher and seam irons</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="[object Object].html"><b>Flooring Calculator</b><span>Laminate and vinyl alternative</span></a>
-      <a class="tool-card" href="[object Object].html"><b>Tile Calculator</b><span>Tile alternative for the room</span></a>
-      <a class="tool-card" href="[object Object].html"><b>Paint Calculator</b><span>Paint the walls around it</span></a>
+      <a class="tool-card" href="flooring-calculator.html"><b data-i18n="calc.flooring-calculator.h1">Flooring Calculator</b><span data-i18n="calc.carpet-calculator.related.0">Laminate and vinyl alternative</span></a>
+      <a class="tool-card" href="tile-calculator.html"><b data-i18n="calc.tile-calculator.h1">Tile Calculator</b><span data-i18n="calc.carpet-calculator.related.1">Tile alternative for the room</span></a>
+      <a class="tool-card" href="paint-calculator.html"><b data-i18n="calc.paint-calculator.h1">Paint Calculator</b><span data-i18n="calc.carpet-calculator.related.2">Paint the walls around it</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
   <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
   <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
       title: "Carpet Calculator - How Much Carpet Do I Need in Square Yards?",

@@ -6,6 +6,11 @@
   var form = document.getElementById("calc-form");
   var resultsEl = document.getElementById("results");
   var shareEl = document.getElementById("share-url");
+  var T = window.I18N || null;
+
+  function tr(s, cat) { return T ? T.map(s, cat) : s; }
+  function trUnit(s) { return T ? T.mapUnit(s) : s; }
+  function trNote(s) { return T ? T.mapNote(s) : s; }
 
   function fmt(v) {
     if (!isFinite(v)) return "–";
@@ -52,9 +57,9 @@
         var row = document.createElement("div");
         row.className = "result";
         row.innerHTML =
-          '<div class="r-label">' + r.label + '</div><div><span class="val">' + fmt(r.value) +
-          '</span><span class="unit-tag">' + r.unit + "</span>" +
-          (r.note ? '<div class="note">' + r.note + "</div>" : "") + "</div>";
+          '<div class="r-label">' + tr(r.label, "res") + '</div><div><span class="val">' + fmt(r.value) +
+          '</span><span class="unit-tag">' + trUnit(r.unit) + "</span>" +
+          (r.note ? '<div class="note">' + trNote(r.note) + "</div>" : "") + "</div>";
         resultsEl.appendChild(row);
       });
       resultsEl.classList.add("show");
@@ -66,12 +71,13 @@
 
   function buildForm() {
     if (!form) return;
+    form.innerHTML = "";
     C.fields.forEach(function (f) {
       var div = document.createElement("div");
       div.className = "field";
       var label = document.createElement("label");
       label.setAttribute("for", "f-" + f.name);
-      label.innerHTML = f.label + (f.hint ? ' <span class="unit-hint">(' + f.hint + ")</span>" : "");
+      label.innerHTML = tr(f.label, "fields") + (f.hint ? ' <span class="unit-hint">(' + tr(f.hint, "fields") + ")</span>" : "");
       var row = document.createElement("div");
       row.className = "input-row";
       var input;
@@ -80,7 +86,7 @@
         f.options.forEach(function (o) {
           var opt = document.createElement("option");
           opt.value = o.value;
-          opt.textContent = o.label;
+          opt.textContent = tr(o.label, "opts");
           input.appendChild(opt);
         });
       } else {
@@ -98,7 +104,7 @@
       if (f.unit) {
         var u = document.createElement("span");
         u.className = "unit";
-        u.textContent = f.unit;
+        u.textContent = trUnit(f.unit);
         row.appendChild(u);
       }
       div.appendChild(label);
@@ -113,6 +119,14 @@
   buildForm();
   applyParams();
   compute();
+
+  if (T) {
+    document.addEventListener("i18n:changed", function () {
+      buildForm();
+      applyParams();
+      compute();
+    });
+  }
 
   document.addEventListener("click", function (e) {
     var t = e.target;

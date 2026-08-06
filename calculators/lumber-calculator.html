@@ -3,107 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Board Foot Calculator - Lumber Volume &amp; Cost</title>
+  <title>Board Foot Calculator - Lumber Volume &amp;amp; Cost</title>
   <meta name="description" content="Free board foot calculator: convert lumber thickness, width and length into board feet, and calculate total cost for any number of boards.">
   <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/lumber-calculator.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"How do I calculate board feet?","acceptedAnswer":{"@type":"Answer","text":"Board feet = (thickness in inches x width in inches x length in feet) / 12. A 2x4 that is 8 feet long is 2 x 4 x 8 / 12 = 5.33 board feet."}},
-      {"@type":"Question","name":"What is the difference between board foot and linear foot?","acceptedAnswer":{"@type":"Answer","text":"A board foot is a volume measure (144 cubic inches), while a linear foot is simply one foot of length regardless of width or thickness. Lumber yards price hardwood in board feet and framing lumber per linear foot or per piece."}},
-      {"@type":"Question","name":"How many board feet is in a 2x4x8?","acceptedAnswer":{"@type":"Answer","text":"A 2x4 that is 8 feet long contains 5.33 board feet: (2 x 4 x 8) / 12 = 5.33. A bundle of 2x4x8 lumber (294 pieces) is about 1,567 board feet."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a 2x4 actually measure?","acceptedAnswer":{"@type":"Answer","text":"A \"2x4\" is 1.5 x 3.5 inches after drying and planing. Board foot pricing for hardwood uses nominal (rough-sawn) size, while framing is priced by the piece."}},{"@type":"Question","name":"How much does lumber cost per board foot?","acceptedAnswer":{"@type":"Answer","text":"In 2025-2026, framing lumber runs about $0.50-$1.50 per board foot, while hardwood like oak, walnut and cherry ranges from $4-$15 per board foot depending on grade."}},{"@type":"Question","name":"What is the cheapest way to buy lumber?","acceptedAnswer":{"@type":"Answer","text":"Buy framing lumber in full bundles, choose a less expensive grade of hardwood (No. 2 instead of FAS), and always account for 10-15% waste from knots, warping and cutting errors."}}]}
   </script>
 </head>
 <body>
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Board Foot Calculator</h1>
-    <p class="lead">Convert lumber dimensions into board feet and see the total cost for any project - framing, decking, or hardwood. Works for both rough and dimensional lumber.</p>
+    <h1 data-i18n="calc.lumber-calculator.h1">Board Foot Calculator</h1>
+    <p class="lead" data-i18n="calc.lumber-calculator.lead">Convert lumber dimensions into board feet and see the total cost for any project - framing, decking, or hardwood. Works for both rough and dimensional lumber.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this board foot calculator</h2>
-    <p>Enter the nominal thickness and width in inches, the length in feet, and the number of boards. Optionally add the price per board foot to get a project cost. The formula is (T x W / 12) x L x count.</p>
-    <p>Note that hardwood is priced in board feet of the actual (rough) dimensions, while framing lumber is usually sold by the piece or linear foot. If your supplier quotes per linear foot, use the linear-feet result instead.</p>
+    <h2 data-i18n="calc.lumber-calculator.ht">How to use this board foot calculator</h2>
+    <p data-i18n="calc.lumber-calculator.howto.0">Enter the nominal thickness and width in inches, the length in feet, and the number of boards. Optionally add the price per board foot to get a project cost. The formula is (T x W / 12) x L x count.</p>
+    <p data-i18n="calc.lumber-calculator.howto.1">Note that hardwood is priced in board feet of the actual (rough) dimensions, while framing lumber is usually sold by the piece or linear foot. If your supplier quotes per linear foot, use the linear-feet result instead.</p>
 
     <div class="faq">
-      <h2>Lumber FAQ</h2>
-      <details><summary>What does a 2x4 actually measure?</summary><p>A "2x4" is 1.5 x 3.5 inches after drying and planing. Board foot pricing for hardwood uses nominal (rough-sawn) size, while framing is priced by the piece.</p></details>
-      <details><summary>How much does lumber cost per board foot?</summary><p>In 2025-2026, framing lumber runs about $0.50-$1.50 per board foot, while hardwood like oak, walnut and cherry ranges from $4-$15 per board foot depending on grade.</p></details>
-      <details><summary>What is the cheapest way to buy lumber?</summary><p>Buy framing lumber in full bundles, choose a less expensive grade of hardwood (No. 2 instead of FAS), and always account for 10-15% waste from knots, warping and cutting errors.</p></details>
+      <h2 data-i18n="calc.lumber-calculator.ft">Board foot calculator FAQ</h2>
+      <details><summary data-i18n="calc.lumber-calculator.faqs.0.q">What does a 2x4 actually measure?</summary><p data-i18n="calc.lumber-calculator.faqs.0.a">A &quot;2x4&quot; is 1.5 x 3.5 inches after drying and planing. Board foot pricing for hardwood uses nominal (rough-sawn) size, while framing is priced by the piece.</p></details>
+      <details><summary data-i18n="calc.lumber-calculator.faqs.1.q">How much does lumber cost per board foot?</summary><p data-i18n="calc.lumber-calculator.faqs.1.a">In 2025-2026, framing lumber runs about $0.50-$1.50 per board foot, while hardwood like oak, walnut and cherry ranges from $4-$15 per board foot depending on grade.</p></details>
+      <details><summary data-i18n="calc.lumber-calculator.faqs.2.q">What is the cheapest way to buy lumber?</summary><p data-i18n="calc.lumber-calculator.faqs.2.a">Buy framing lumber in full bundles, choose a less expensive grade of hardwood (No. 2 instead of FAS), and always account for 10-15% waste from knots, warping and cutting errors.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Dimensional lumber (2x4, 2x6, 4x4)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Hardwood boards for fine work</a></li>
-        <li><a href="#" rel="nofollow sponsored">Wood preservative and fasteners</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.lumber-calculator.aff.0">Dimensional lumber (2x4, 2x6, 4x4)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.lumber-calculator.aff.1">Hardwood boards for fine work</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.lumber-calculator.aff.2">Wood preservative and fasteners</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="deck-stain-calculator.html"><b>Deck Stain Calculator</b><span>Stain for your deck boards</span></a>
-      <a class="tool-card" href="rebar-calculator.html"><b>Rebar Calculator</b><span>Steel reinforcement</span></a>
-      <a class="tool-card" href="concrete-calculator.html"><b>Concrete Calculator</b><span>Footings for the structure</span></a>
+      <a class="tool-card" href="deck-stain-calculator.html"><b data-i18n="calc.deck-stain-calculator.h1">Deck Stain Calculator</b><span data-i18n="calc.lumber-calculator.related.0">Stain for your deck boards</span></a>
+      <a class="tool-card" href="rebar-calculator.html"><b data-i18n="calc.rebar-calculator.h1">Rebar Calculator</b><span data-i18n="calc.lumber-calculator.related.1">Steel reinforcement</span></a>
+      <a class="tool-card" href="concrete-calculator.html"><b data-i18n="calc.concrete-calculator.h1">Concrete Calculator</b><span data-i18n="calc.lumber-calculator.related.2">Footings for the structure</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
+  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+  <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
-      title: "Board Foot Calculator",
+      title: "Board Foot Calculator - Lumber Volume &amp;amp; Cost",
       fields: [
-        { name: "thickness", label: "Board thickness", unit: "in", value: 2, min: 0.5, max: 12, step: 0.25 },
-        { name: "width", label: "Board width", unit: "in", value: 4, min: 1, max: 24, step: 0.5 },
-        { name: "length", label: "Board length", unit: "ft", value: 8, min: 1, max: 40, step: 0.5 },
-        { name: "count", label: "Number of boards", value: 10, min: 1, max: 10000, step: 1 },
-        { name: "price", label: "Price per board foot", unit: "$", value: 0.75, min: 0, max: 100, step: 0.01, hint: "leave 0 to skip cost" }
+        { name: "thickness", label: "Board thickness", type: "number", unit: "in", value: 2, min: 0.5, max: 12, step: 0.25 },
+        { name: "width", label: "Board width", type: "number", unit: "in", value: 4, min: 1, max: 24, step: 0.5 },
+        { name: "length", label: "Board length", type: "number", unit: "ft", value: 8, min: 1, max: 40, step: 0.5 },
+        { name: "count", label: "Number of boards", type: "number", value: 10, min: 1, max: 10000, step: 1 },
+        { name: "price", label: "Price per board foot", type: "number", unit: "$", value: 0.75, min: 0, max: 100, step: 0.01 }
       ],
       compute: function (v) {
         var bdft = (v.thickness * v.width / 12) * v.length;
-        var total = bdft * v.count;
-        var out = [
-          { label: "Board feet per board", value: bdft, unit: "bd ft" },
-          { label: "Linear feet per board", value: v.length, unit: "ft" },
-          { label: "Total board feet", value: total, unit: "bd ft" }
-        ];
-        if (v.price > 0) {
-          out.push({ label: "Estimated cost", value: total * v.price, unit: "$" });
-        }
-        return out;
+var total = bdft * v.count;
+var out = [
+  { label: "Board feet per board", value: bdft, unit: "bd ft" },
+  { label: "Linear feet per board", value: v.length, unit: "ft" },
+  { label: "Total board feet", value: total, unit: "bd ft" }
+];
+if (v.price > 0) {
+  out.push({ label: "Estimated cost", value: total * v.price, unit: "$" });
+}
+return out;
       }
     };
   </script>
   <script src="../js/calculator.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-  <!-- ADSENSE END -->
 </body>
 </html>

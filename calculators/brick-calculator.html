@@ -16,61 +16,67 @@
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Brick Calculator</h1>
-    <p class="lead">Work out how many bricks to order for a wall, path or patio - including mortar joints and the 10% waste every bricklayer budgets for.</p>
+    <h1 data-i18n="calc.brick-calculator.h1">Brick Calculator</h1>
+    <p class="lead" data-i18n="calc.brick-calculator.lead">Work out how many bricks to order for a wall, path or patio - including mortar joints and the 10% waste every bricklayer budgets for.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this brick calculator</h2>
-    <p>Measure the area to be covered: length and height for a wall, length and width for a patio. Both in feet.</p>
-    <p>Choose the brick size. Modular bricks (3.6 x 2.25 x 8 inches) need about 7 per sq ft with a 3/8-inch mortar joint; standard bricks need about 7.5, and larger oversize bricks only 5-6.</p>
-    <p>Always add 10%: brick arrives damaged, corners get cut, and you will want matching bricks for future repairs - matching a production batch later is impossible.</p>
+    <h2 data-i18n="calc.brick-calculator.ht">How to use this brick calculator</h2>
+    <p data-i18n="calc.brick-calculator.howto.0">Measure the area to be covered: length and height for a wall, length and width for a patio. Both in feet.</p>
+    <p data-i18n="calc.brick-calculator.howto.1">Choose the brick size. Modular bricks (3.6 x 2.25 x 8 inches) need about 7 per sq ft with a 3/8-inch mortar joint; standard bricks need about 7.5, and larger oversize bricks only 5-6.</p>
+    <p data-i18n="calc.brick-calculator.howto.2">Always add 10%: brick arrives damaged, corners get cut, and you will want matching bricks for future repairs - matching a production batch later is impossible.</p>
 
     <div class="faq">
-      <h2>Brick calculator FAQ</h2>
-      <details><summary>How many bricks do I need for a 10x10 patio?</summary><p>A 10x10 patio is 100 sq ft. With modular bricks at 7 per sq ft, that is 700 bricks plus 10% waste: about 770 bricks total.</p></details>
-      <details><summary>How many bricks are in a cube or pallet?</summary><p>Bricks are typically packed 500 per cube/pallet (some suppliers pack 450-550). Order full pallets, then add loose bricks to match your calculated total.</p></details>
-      <details><summary>How much mortar do I need for a brick wall?</summary><p>One bag of mortar mix covers roughly 30-40 sq ft of brick wall at a standard 3/8-inch joint. For a 100 sq ft wall, plan on 3-4 bags.</p></details>
+      <h2 data-i18n="calc.brick-calculator.ft">Brick calculator FAQ</h2>
+      <details><summary data-i18n="calc.brick-calculator.faqs.0.q">How many bricks do I need for a 10x10 patio?</summary><p data-i18n="calc.brick-calculator.faqs.0.a">A 10x10 patio is 100 sq ft. With modular bricks at 7 per sq ft, that is 700 bricks plus 10% waste: about 770 bricks total.</p></details>
+      <details><summary data-i18n="calc.brick-calculator.faqs.1.q">How many bricks are in a cube or pallet?</summary><p data-i18n="calc.brick-calculator.faqs.1.a">Bricks are typically packed 500 per cube/pallet (some suppliers pack 450-550). Order full pallets, then add loose bricks to match your calculated total.</p></details>
+      <details><summary data-i18n="calc.brick-calculator.faqs.2.q">How much mortar do I need for a brick wall?</summary><p data-i18n="calc.brick-calculator.faqs.2.a">One bag of mortar mix covers roughly 30-40 sq ft of brick wall at a standard 3/8-inch joint. For a 100 sq ft wall, plan on 3-4 bags.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Bricks and pavers (all styles)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Mortar mix and masonry cement</a></li>
-        <li><a href="#" rel="nofollow sponsored">Trowels, levels and jointers</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.brick-calculator.aff.0">Bricks and pavers (all styles)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.brick-calculator.aff.1">Mortar mix and masonry cement</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.brick-calculator.aff.2">Trowels, levels and jointers</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="[object Object].html"><b>Concrete Calculator</b><span>Footings for the wall</span></a>
-      <a class="tool-card" href="[object Object].html"><b>Gravel Calculator</b><span>Base for brick paths</span></a>
-      <a class="tool-card" href="[object Object].html"><b>Tile Calculator</b><span>Alternative paving materials</span></a>
+      <a class="tool-card" href="concrete-calculator.html"><b data-i18n="calc.concrete-calculator.h1">Concrete Calculator</b><span data-i18n="calc.brick-calculator.related.0">Footings for the wall</span></a>
+      <a class="tool-card" href="gravel-calculator.html"><b data-i18n="calc.gravel-calculator.h1">Gravel Calculator</b><span data-i18n="calc.brick-calculator.related.1">Base for brick paths</span></a>
+      <a class="tool-card" href="tile-calculator.html"><b data-i18n="calc.tile-calculator.h1">Tile Calculator</b><span data-i18n="calc.brick-calculator.related.2">Alternative paving materials</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
   <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
   <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
       title: "Brick Calculator - How Many Bricks Do I Need for a Wall or Patio?",

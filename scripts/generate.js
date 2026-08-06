@@ -25,8 +25,8 @@ function buildPage(c) {
       acceptedAnswer: { "@type": "Answer", text: f.a }
     }))
   });
-  const related = c.related.map(s =>
-    `<a class="tool-card" href="${s}.html"><b>${esc(s.title)}</b><span>${esc(s.tag)}</span></a>`
+  const related = c.related.map((r, i) =>
+    `<a class="tool-card" href="${r.slug}.html"><b data-i18n="calc.${r.slug}.h1">${esc(r.title)}</b><span data-i18n="calc.${c.slug}.related.${i}">${esc(r.tag)}</span></a>`
   ).join("\n      ");
   const fieldsJs = c.fields.map(f => {
     let o = "";
@@ -61,38 +61,41 @@ function buildPage(c) {
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> ${esc(CFG.SITE_NAME)}</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>${esc(c.h1)}</h1>
-    <p class="lead">${esc(c.lead)}</p>
+    <h1 data-i18n="calc.${c.slug}.h1">${esc(c.h1)}</h1>
+    <p class="lead" data-i18n="calc.${c.slug}.lead">${esc(c.lead)}</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this ${esc(c.toolName)}</h2>
-    ${c.howto.map(p => `<p>${p}</p>`).join("\n    ")}
+    <h2 data-i18n="calc.${c.slug}.ht">How to use this ${esc(c.toolName)}</h2>
+    ${c.howto.map((p, i) => `<p data-i18n="calc.${c.slug}.howto.${i}">${p}</p>`).join("\n    ")}
 
     <div class="faq">
-      <h2>${esc(c.toolName.charAt(0).toUpperCase() + c.toolName.slice(1))} FAQ</h2>
-      ${c.faqs.map(f => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("\n      ")}
+      <h2 data-i18n="calc.${c.slug}.ft">${esc(c.toolName.charAt(0).toUpperCase() + c.toolName.slice(1))} FAQ</h2>
+      ${c.faqs.map((f, i) => `<details><summary data-i18n="calc.${c.slug}.faqs.${i}.q">${esc(f.q)}</summary><p data-i18n="calc.${c.slug}.faqs.${i}.a">${esc(f.a)}</p></details>`).join("\n      ")}
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        ${c.affiliate.map(a => `<li><a href="#" rel="nofollow sponsored">${esc(a)}</a></li>`).join("\n        ")}
+        ${c.affiliate.map((a, i) => `<li><a href="#" rel="nofollow sponsored" data-i18n="calc.${c.slug}.aff.${i}">${esc(a)}</a></li>`).join("\n        ")}
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
       ${related}
     </div>
@@ -100,14 +103,17 @@ function buildPage(c) {
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> ${esc(CFG.SITE_NAME)}. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> ${esc(CFG.SITE_NAME)}. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
   <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
   <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
       title: "${esc(c.metaTitle)}",
@@ -168,7 +174,7 @@ function rebuildIndexToolGrid(slugs) {
     const meta = SLUG_META[s] || BANK.find(c => c.slug === s);
     const title = meta ? (meta[0] || meta.h1 || meta.metaTitle) : s;
     const tag = meta ? (meta[1] || meta.lead || "") : "";
-    return `      <a class="tool-card" href="calculators/${s}.html"><b>${esc(title)}</b><span>${esc(tag)}</span></a>`;
+    return `      <a class="tool-card" href="calculators/${s}.html"><b data-i18n="calc.${s}.h1">${esc(title)}</b><span data-i18n="calc.${s}.tag">${esc(tag)}</span></a>`;
   }).join("\n");
   const block = `    <!-- TOOLS:START -->\n    <div class="tool-grid">\n${cards}\n    </div>\n    <!-- TOOLS:END -->`;
   fs.writeFileSync(idxPath, idx.slice(0, start) + block + idx.slice(end + "<!-- TOOLS:END -->".length));

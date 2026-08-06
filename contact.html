@@ -13,27 +13,33 @@
   <header class="site">
     <div class="wrap">
       <a class="logo" href="index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Contact</h1>
-    <p class="lead">Found a bug, have a question, or want to suggest a new calculator? We would love to hear from you.</p>
+    <h1 data-i18n="ct.h1">Contact</h1>
+    <p class="lead" data-i18n="ct.lead">Found a bug, have a question, or want to suggest a new calculator? We would love to hear from you.</p>
 
     <div class="card">
-      <p>Send an email to <a href="mailto:nesquike.e1@gmail.com">nesquike.e1@gmail.com</a> and we will get back to you as soon as possible.</p>
-      <p>Please include the name of the calculator you are using (for example "paint calculator") and, if possible, a link to your result page - that helps us reproduce the issue quickly.</p>
+      <p><span data-i18n="ct.p1a">Send an email to</span> <a href="mailto:nesquike.e1@gmail.com">nesquike.e1@gmail.com</a><span data-i18n="ct.p1b"> and we will get back to you as soon as possible.</span></p>
+      <p data-i18n="ct.p2">Please include the name of the calculator you are using (for example "paint calculator") and, if possible, a link to your result page - that helps us reproduce the issue quickly.</p>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="privacy.html">Privacy</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="sitemap.xml">Sitemap</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="sitemap.xml" data-i18n="footer.sitemap">Sitemap</a></span>
     </div>
   </footer>
 
+  <script>window.I18N_BASE = "";</script>
+  <script src="js/i18n/core.js"></script>
+  <script src="js/i18n/i18n.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

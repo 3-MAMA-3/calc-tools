@@ -11,18 +11,25 @@
   <header class="site">
     <div class="wrap">
       <a class="logo" href="index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
+      <nav class="site">
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
   <main class="wrap">
-    <h1>Page not found</h1>
-    <p class="lead">The page you are looking for does not exist. Head back to the <a href="index.html">calculator index</a>.</p>
+    <h1 data-i18n="e404.h1">Page not found</h1>
+    <p class="lead" data-i18n="e404.lead">The page you are looking for does not exist. Head back to the calculator index.</p>
+    <p><a class="btn" href="index.html" data-i18n="nav.all">All calculators</a></p>
   </main>
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="privacy.html">Privacy</a> &middot; <a href="contact.html">Contact</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="contact.html" data-i18n="footer.contact">Contact</a></span>
     </div>
   </footer>
+  <script>window.I18N_BASE = "";</script>
+  <script src="js/i18n/core.js"></script>
+  <script src="js/i18n/i18n.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

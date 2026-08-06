@@ -3,110 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rebar Calculator - How Many Bars &amp; Spacing for a Concrete Slab</title>
+  <title>Rebar Calculator - How Many Bars &amp;amp; Spacing for a Concrete Slab</title>
   <meta name="description" content="Free rebar calculator: find out how many rebar bars you need and their total length for a concrete slab, driveway or footing based on spacing.">
   <link rel="canonical" href="https://3-mama-3.github.io/calc-tools/calculators/rebar-calculator.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"How far apart should rebar be spaced in a concrete slab?","acceptedAnswer":{"@type":"Answer","text":"Standard residential slabs use #3 or #4 rebar spaced 12 to 18 inches apart in both directions. Driveways and thicker slabs use tighter spacing (12 inches) and larger bar sizes."}},
-      {"@type":"Question","name":"How do I calculate the number of rebar bars?","acceptedAnswer":{"@type":"Answer","text":"Divide the length of the slab in inches by the spacing in inches, then add 1 for the first bar. Multiply by the slab width for the total linear feet of rebar."}},
-      {"@type":"Question","name":"Does a 4-inch slab need rebar?","acceptedAnswer":{"@type":"Answer","text":"A 4-inch slab without heavy loads can use wire mesh instead of rebar, but for driveways, footings and any area that will carry vehicles, use #3 rebar at 18-inch spacing or closer."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many linear feet of rebar is in a 10x10 slab?","acceptedAnswer":{"@type":"Answer","text":"With #3 rebar at 12-inch spacing in both directions, a 10x10 slab needs about 10 bars of 10 feet each way - 220 linear feet total including both directions."}},{"@type":"Question","name":"What is the difference between #3 and #4 rebar?","acceptedAnswer":{"@type":"Answer","text":"#3 rebar is 3/8-inch diameter and #4 is 1/2-inch. Use #4 (or larger) for footings, foundations and structural pours; #3 is fine for most residential flat slabs."}},{"@type":"Question","name":"Do I need rebar chairs or spacers?","acceptedAnswer":{"@type":"Answer","text":"Yes - rebar must sit in the middle third of the slab, not at the bottom. Use plastic chairs every 3-4 feet so the bar is fully embedded in concrete and protected from moisture."}}]}
   </script>
 </head>
 <body>
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Rebar Calculator</h1>
-    <p class="lead">Calculate how many rebar bars you need for a slab or footing, and the total linear feet of steel - for both single and double-direction (grid) reinforcement.</p>
+    <h1 data-i18n="calc.rebar-calculator.h1">Rebar Calculator</h1>
+    <p class="lead" data-i18n="calc.rebar-calculator.lead">Calculate how many rebar bars you need for a slab or footing, and the total linear feet of steel - for both single and double-direction (grid) reinforcement.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this rebar calculator</h2>
-    <p>Enter the length and width of the concrete pour, the spacing between bars, and choose single or grid reinforcement. The calculator divides the run by the spacing, adds one for the starting bar, and multiplies by the bar length to give you total linear feet.</p>
-    <p>For a one-way layout (typical for small footings) use "single direction". For slabs, driveways and patios, use "grid" - bars run both ways, roughly doubling the amount of steel. Standard practice is #3 bars (3/8 inch) at 12-18 inches on center for residential work.</p>
+    <h2 data-i18n="calc.rebar-calculator.ht">How to use this rebar calculator</h2>
+    <p data-i18n="calc.rebar-calculator.howto.0">Enter the length and width of the concrete pour, the spacing between bars, and choose single or grid reinforcement. The calculator divides the run by the spacing, adds one for the starting bar, and multiplies by the bar length to give you total linear feet.</p>
+    <p data-i18n="calc.rebar-calculator.howto.1">For a one-way layout (typical for small footings) use "single direction". For slabs, driveways and patios, use "grid" - bars run both ways, roughly doubling the amount of steel. Standard practice is #3 bars (3/8 inch) at 12-18 inches on center for residential work.</p>
 
     <div class="faq">
-      <h2>Rebar FAQ</h2>
-      <details><summary>How many linear feet of rebar is in a 10x10 slab?</summary><p>With #3 rebar at 12-inch spacing in both directions, a 10x10 slab needs about 10 bars of 10 feet each way - 220 linear feet total including both directions.</p></details>
-      <details><summary>What is the difference between #3 and #4 rebar?</summary><p>#3 rebar is 3/8-inch diameter and #4 is 1/2-inch. Use #4 (or larger) for footings, foundations and structural pours; #3 is fine for most residential flat slabs.</p></details>
-      <details><summary>Do I need rebar chairs or spacers?</summary><p>Yes - rebar must sit in the middle third of the slab, not at the bottom. Use plastic chairs every 3-4 feet so the bar is fully embedded in concrete and protected from moisture.</p></details>
+      <h2 data-i18n="calc.rebar-calculator.ft">Rebar calculator FAQ</h2>
+      <details><summary data-i18n="calc.rebar-calculator.faqs.0.q">How many linear feet of rebar is in a 10x10 slab?</summary><p data-i18n="calc.rebar-calculator.faqs.0.a">With #3 rebar at 12-inch spacing in both directions, a 10x10 slab needs about 10 bars of 10 feet each way - 220 linear feet total including both directions.</p></details>
+      <details><summary data-i18n="calc.rebar-calculator.faqs.1.q">What is the difference between #3 and #4 rebar?</summary><p data-i18n="calc.rebar-calculator.faqs.1.a">#3 rebar is 3/8-inch diameter and #4 is 1/2-inch. Use #4 (or larger) for footings, foundations and structural pours; #3 is fine for most residential flat slabs.</p></details>
+      <details><summary data-i18n="calc.rebar-calculator.faqs.2.q">Do I need rebar chairs or spacers?</summary><p data-i18n="calc.rebar-calculator.faqs.2.a">Yes - rebar must sit in the middle third of the slab, not at the bottom. Use plastic chairs every 3-4 feet so the bar is fully embedded in concrete and protected from moisture.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Rebar (all common sizes)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Rebar chairs and wire ties</a></li>
-        <li><a href="#" rel="nofollow sponsored">Concrete mix and finishing tools</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.rebar-calculator.aff.0">Rebar (all common sizes)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.rebar-calculator.aff.1">Rebar chairs and wire ties</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.rebar-calculator.aff.2">Concrete mix and finishing tools</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="concrete-calculator.html"><b>Concrete Calculator</b><span>Cubic yards and bags needed</span></a>
-      <a class="tool-card" href="gravel-calculator.html"><b>Gravel Calculator</b><span>Tons of base material</span></a>
-      <a class="tool-card" href="lumber-calculator.html"><b>Board Foot Calculator</b><span>Lumber volume and cost</span></a>
+      <a class="tool-card" href="concrete-calculator.html"><b data-i18n="calc.concrete-calculator.h1">Concrete Calculator</b><span data-i18n="calc.rebar-calculator.related.0">Cubic yards and bags needed</span></a>
+      <a class="tool-card" href="gravel-calculator.html"><b data-i18n="calc.gravel-calculator.h1">Gravel Calculator</b><span data-i18n="calc.rebar-calculator.related.1">Tons of base material</span></a>
+      <a class="tool-card" href="lumber-calculator.html"><b data-i18n="calc.lumber-calculator.h1">Board Foot Calculator</b><span data-i18n="calc.rebar-calculator.related.2">Lumber volume and cost</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
+  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+  <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
-      title: "Rebar Calculator",
+      title: "Rebar Calculator - How Many Bars &amp;amp; Spacing for a Concrete Slab",
       fields: [
-        { name: "length", label: "Slab length", unit: "ft", value: 10, min: 1, max: 300, step: 0.5 },
-        { name: "width", label: "Slab width", unit: "ft", value: 10, min: 1, max: 300, step: 0.5 },
-        { name: "spacing", label: "Bar spacing", unit: "in", value: 12, min: 4, max: 48, step: 1 },
-        { name: "direction", label: "Reinforcement", type: "select", options: [ { value: "grid", label: "Grid (both directions)" }, { value: "single", label: "Single direction" } ] }
+        { name: "length", label: "Slab length", type: "number", unit: "ft", value: 10, min: 1, max: 300, step: 0.5 },
+        { name: "width", label: "Slab width", type: "number", unit: "ft", value: 10, min: 1, max: 300, step: 0.5 },
+        { name: "spacing", label: "Bar spacing", type: "number", unit: "in", value: 12, min: 4, max: 48, step: 1 },
+        { name: "direction", label: "Reinforcement", type: "select", options: [ { value: grid, label: "Grid (both directions)" }, { value: single, label: "Single direction" } ] }
       ],
       compute: function (v) {
         var barsPerRun = Math.ceil((v.length * 12) / v.spacing) + 1;
-        var barsPerWidth = Math.ceil((v.width * 12) / v.spacing) + 1;
-        var bars, feet;
-        if (v.direction === "grid") {
-          bars = barsPerRun + barsPerWidth;
-          feet = barsPerRun * v.width + barsPerWidth * v.length;
-        } else {
-          bars = barsPerRun;
-          feet = barsPerRun * v.width;
-        }
-        return [
-          { label: "Rebar bars needed", value: bars, unit: "bars" },
-          { label: "Total rebar length", value: feet, unit: "linear ft" },
-          { label: "Bars along length", value: barsPerRun, unit: "bars" }
-        ];
+var barsPerWidth = Math.ceil((v.width * 12) / v.spacing) + 1;
+var bars, feet;
+if (v.direction === "grid") {
+  bars = barsPerRun + barsPerWidth;
+  feet = barsPerRun * v.width + barsPerWidth * v.length;
+} else {
+  bars = barsPerRun;
+  feet = barsPerRun * v.width;
+}
+return [
+  { label: "Rebar bars needed", value: bars, unit: "bars" },
+  { label: "Total rebar length", value: feet, unit: "linear ft" },
+  { label: "Bars along length", value: barsPerRun, unit: "bars" }
+];
       }
     };
   </script>
   <script src="../js/calculator.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-  <!-- ADSENSE END -->
 </body>
 </html>

@@ -16,61 +16,67 @@
   <header class="site">
     <div class="wrap">
       <a class="logo" href="../index.html"><span class="mark">&#128732;</span> HomeCalc Tools</a>
-      <nav class="site"><a href="../index.html">All calculators</a></nav>
+      <nav class="site">
+        <a href="../index.html" data-i18n="nav.all">All calculators</a>
+        <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <h1>Sod Calculator</h1>
-    <p class="lead">Find out exactly how much sod to order for your lawn - in square feet, rolls and pallets - so you never run short on delivery day.</p>
+    <h1 data-i18n="calc.sod-calculator.h1">Sod Calculator</h1>
+    <p class="lead" data-i18n="calc.sod-calculator.lead">Find out exactly how much sod to order for your lawn - in square feet, rolls and pallets - so you never run short on delivery day.</p>
 
     <div class="card">
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
-      <p class="share">Shareable result link: <input id="share-url" readonly onclick="this.select()"></p>
+      <p class="share"><span data-i18n="share.label">Shareable result link:</span> <input id="share-url" readonly onclick="this.select()"></p>
     </div>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
 
-    <h2>How to use this sod calculator</h2>
-    <p>Measure the length and width of the lawn area in feet. For irregular lawns, split the area into rectangles and circles, calculate each and add them together.</p>
-    <p>Pick a waste percentage: 5% for simple rectangular lawns, 10% for curved borders and beds. The calculator multiplies your lawn area accordingly and divides by the standard pallet coverage of 450 sq ft.</p>
-    <p>Most suppliers deliver by the pallet (about 450 sq ft) and sell loose rolls at roughly 10 sq ft each. Order pallets first, then top up with loose rolls to match your exact area.</p>
+    <h2 data-i18n="calc.sod-calculator.ht">How to use this sod calculator</h2>
+    <p data-i18n="calc.sod-calculator.howto.0">Measure the length and width of the lawn area in feet. For irregular lawns, split the area into rectangles and circles, calculate each and add them together.</p>
+    <p data-i18n="calc.sod-calculator.howto.1">Pick a waste percentage: 5% for simple rectangular lawns, 10% for curved borders and beds. The calculator multiplies your lawn area accordingly and divides by the standard pallet coverage of 450 sq ft.</p>
+    <p data-i18n="calc.sod-calculator.howto.2">Most suppliers deliver by the pallet (about 450 sq ft) and sell loose rolls at roughly 10 sq ft each. Order pallets first, then top up with loose rolls to match your exact area.</p>
 
     <div class="faq">
-      <h2>Sod calculator FAQ</h2>
-      <details><summary>How many square feet does a pallet of sod cover?</summary><p>Most suppliers stack roughly 450 square feet of sod on a pallet, but it varies between 400 and 500 sq ft depending on the grower. Ask your supplier for the exact coverage before ordering.</p></details>
-      <details><summary>How much does a pallet of sod cost?</summary><p>Prices typically range from $130-$250 per pallet in the US (2025-2026), plus delivery. Loose rolls cost around $0.30-$0.80 per sq ft when bought in small quantities.</p></details>
-      <details><summary>How long can sod sit on a pallet?</summary><p>Sod is living grass - it should be installed within 24 hours of delivery, and 48 hours at the absolute maximum. On hot days, water it lightly while it waits and keep rolls in the shade.</p></details>
+      <h2 data-i18n="calc.sod-calculator.ft">Sod calculator FAQ</h2>
+      <details><summary data-i18n="calc.sod-calculator.faqs.0.q">How many square feet does a pallet of sod cover?</summary><p data-i18n="calc.sod-calculator.faqs.0.a">Most suppliers stack roughly 450 square feet of sod on a pallet, but it varies between 400 and 500 sq ft depending on the grower. Ask your supplier for the exact coverage before ordering.</p></details>
+      <details><summary data-i18n="calc.sod-calculator.faqs.1.q">How much does a pallet of sod cost?</summary><p data-i18n="calc.sod-calculator.faqs.1.a">Prices typically range from $130-$250 per pallet in the US (2025-2026), plus delivery. Loose rolls cost around $0.30-$0.80 per sq ft when bought in small quantities.</p></details>
+      <details><summary data-i18n="calc.sod-calculator.faqs.2.q">How long can sod sit on a pallet?</summary><p data-i18n="calc.sod-calculator.faqs.2.a">Sod is living grass - it should be installed within 24 hours of delivery, and 48 hours at the absolute maximum. On hot days, water it lightly while it waits and keep rolls in the shade.</p></details>
     </div>
 
     <div class="affiliate-box">
-      <h3>Supplies for this project</h3>
+      <h3 data-i18n="aff.title">Supplies for this project</h3>
       <ul>
-        <li><a href="#" rel="nofollow sponsored">Grass sod by the pallet (delivery options)</a></li>
-        <li><a href="#" rel="nofollow sponsored">Lawn starter fertilizer and soil prep</a></li>
-        <li><a href="#" rel="nofollow sponsored">Sod knives, rollers and edgers</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.sod-calculator.aff.0">Grass sod by the pallet (delivery options)</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.sod-calculator.aff.1">Lawn starter fertilizer and soil prep</a></li>
+        <li><a href="#" rel="nofollow sponsored" data-i18n="calc.sod-calculator.aff.2">Sod knives, rollers and edgers</a></li>
       </ul>
     </div>
 
-    <h2>Related calculators</h2>
+    <h2 data-i18n="related.title">Related calculators</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="[object Object].html"><b>Gravel Calculator</b><span>Tons for driveways &amp; beds</span></a>
-      <a class="tool-card" href="[object Object].html"><b>Mulch Calculator</b><span>Bags or yards for beds</span></a>
-      <a class="tool-card" href="[object Object].html"><b>Concrete Calculator</b><span>Patio base and walkways</span></a>
+      <a class="tool-card" href="gravel-calculator.html"><b data-i18n="calc.gravel-calculator.h1">Gravel Calculator</b><span data-i18n="calc.sod-calculator.related.0">Tons for driveways &amp; beds</span></a>
+      <a class="tool-card" href="mulch-calculator.html"><b data-i18n="calc.mulch-calculator.h1">Mulch Calculator</b><span data-i18n="calc.sod-calculator.related.1">Bags or yards for beds</span></a>
+      <a class="tool-card" href="concrete-calculator.html"><b data-i18n="calc.concrete-calculator.h1">Concrete Calculator</b><span data-i18n="calc.sod-calculator.related.2">Patio base and walkways</span></a>
     </div>
   </main>
 
   <footer class="site">
     <div class="wrap cols">
-      <span>&copy; <span id="year"></span> HomeCalc Tools. Free home improvement calculators.</span>
-      <span><a href="../privacy.html">Privacy</a> &middot; <a href="../contact.html">Contact</a> &middot; <a href="../index.html">All calculators</a></span>
+      <span>&copy; <span id="year"></span> HomeCalc Tools. <span data-i18n="footer.tag">Free home improvement calculators.</span></span>
+      <span><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a> &middot; <a href="../contact.html" data-i18n="footer.contact">Contact</a> &middot; <a href="../index.html" data-i18n="nav.all">All calculators</a></span>
     </div>
   </footer>
 
   <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
   <!-- ADSENSE END -->
+  <script>window.I18N_BASE = "../";</script>
+  <script src="../js/i18n/core.js"></script>
+  <script src="../js/i18n/i18n.js"></script>
   <script>
     window.CALC = {
       title: "Sod Calculator - How Many Pallets &amp; Rolls of Sod Do I Need?",
