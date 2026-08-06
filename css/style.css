@@ -40,6 +40,8 @@
 }
 * { box-sizing: border-box; }
 html { background: var(--bg); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scrollbar-width: thin; scrollbar-color: #c7c7cc transparent; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-thumb { background: #c7c7cc; border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; transition: background 0.25s var(--ease); }
 ::-webkit-scrollbar-thumb:hover { background-color: #a1a1a6; }
