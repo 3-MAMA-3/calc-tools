@@ -164,7 +164,7 @@ function buildPage(c) {
 
   <script>window.I18N_BASE = "../";</script>
   <script src="../js/i18n/core.js"></script>
-  <script src="../js/i18n/i18n.js"></script>
+  <script src="../js/i18n/i18n.js?v=3"></script>
   <script src="../js/units.js"></script>
   <script>
     window.CALC = {

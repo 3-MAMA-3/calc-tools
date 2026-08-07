@@ -5,7 +5,8 @@
   var current = "en";
   var loaded = {};
   var attempts = {};
-  var FILE_VERSION = "2";
+  var originals = new WeakMap();
+  var FILE_VERSION = "3";
   var MAX_ATTEMPTS = 3;
 
   function detect() {
@@ -66,13 +67,25 @@
     return fragReplace(str, c.notes);
   }
 
+  function captureOriginals() {
+    var els = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < els.length; i++) {
+      if (!originals.has(els[i])) originals.set(els[i], els[i].textContent);
+    }
+  }
+
   function apply() {
     document.documentElement.lang = current;
     var els = document.querySelectorAll("[data-i18n]");
     for (var i = 0; i < els.length; i++) {
       var el = els[i];
       var v = resolve(el.getAttribute("data-i18n"));
-      if (v !== null && v !== el.textContent) el.textContent = v;
+      if (v !== null) {
+        if (v !== el.textContent) el.textContent = v;
+      } else {
+        var orig = originals.get(el);
+        if (orig !== undefined && orig !== el.textContent) el.textContent = orig;
+      }
     }
     var sel = document.getElementById("lang-select");
     if (sel && sel.value !== current) sel.value = current;
@@ -131,6 +144,7 @@
   function init() {
     current = detect();
     buildDropdown();
+    captureOriginals();
     loadContent(current, apply);
   }
 
