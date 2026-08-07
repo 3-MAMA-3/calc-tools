@@ -96,7 +96,7 @@ function buildPage(c) {
 <body>
   <header class="site">
     <div class="wrap">
-      <a class="logo" href="../index.html"><span class="mark">&#128732;</span> ${esc(CFG.SITE_NAME)}</a>
+      <a class="logo" href="../index.html"><span class="mark">&#128207;</span> ${esc(CFG.SITE_NAME)}</a>
       <nav class="site">
         <a href="../index.html" data-i18n="nav.all">All calculators</a>
         <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
