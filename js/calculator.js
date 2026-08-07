@@ -167,13 +167,12 @@
     t.classList.toggle("copied", copied);
     var orig = t.querySelector("span[data-i18n]");
     var alt = t.querySelector(".alt");
-    if (document.hidden) {
-      if (orig) { orig.style.transition = "none"; orig.style.opacity = copied ? "0" : "1"; }
-      if (alt) { alt.style.transition = "none"; alt.style.opacity = copied ? "1" : "0"; }
-    } else {
-      if (orig) { orig.style.transition = ""; orig.style.opacity = ""; }
-      if (alt) { alt.style.transition = ""; alt.style.opacity = ""; }
-    }
+    if (!orig || !alt) return;
+    var trans = document.hidden ? "none" : "opacity 0.2s ease";
+    orig.style.transition = trans;
+    orig.style.opacity = copied ? "0" : "1";
+    alt.style.transition = trans;
+    alt.style.opacity = copied ? "1" : "0";
   }
   document.addEventListener("click", function (e) {
     var t = e.target;
