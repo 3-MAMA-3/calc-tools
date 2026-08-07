@@ -163,16 +163,19 @@
   }
 
   var copyTimer = null;
+  var COPY_TRANS = "opacity 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1)";
   function setCopyState(t, copied) {
     t.classList.toggle("copied", copied);
     var orig = t.querySelector("span[data-i18n]");
     var alt = t.querySelector(".alt");
     if (!orig || !alt) return;
-    var trans = document.hidden ? "none" : "opacity 0.2s ease";
+    var trans = document.hidden ? "none" : COPY_TRANS;
     orig.style.transition = trans;
     orig.style.opacity = copied ? "0" : "1";
+    orig.style.transform = copied ? "translateY(-10px)" : "none";
     alt.style.transition = trans;
     alt.style.opacity = copied ? "1" : "0";
+    alt.style.transform = copied ? "translateY(0)" : "translateY(10px)";
   }
   document.addEventListener("click", function (e) {
     var t = e.target;
