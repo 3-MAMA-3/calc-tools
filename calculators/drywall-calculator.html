@@ -20,6 +20,7 @@
       <nav class="site">
         <a href="../index.html" data-i18n="nav.all">All calculators</a>
         <span class="lang-wrap"><label class="lang-label" for="lang-select" data-i18n="lang.label">Language</label> <select id="lang-select" aria-label="Language"></select></span>
+        <span class="lang-wrap"><label class="lang-label" for="unit-select" data-i18n="units.label">Units</label> <select id="unit-select" aria-label="Units"></select></span>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
           <span class="tgl">
             <span class="sat sat-sun"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></span>
@@ -136,6 +137,7 @@
   <script>window.I18N_BASE = "../";</script>
   <script src="../js/i18n/core.js"></script>
   <script src="../js/i18n/i18n.js"></script>
+  <script src="../js/units.js"></script>
   <script>
     window.CALC = {
       title: "Drywall Calculator - How Many Sheets Do I Need?",
@@ -144,7 +146,7 @@
         { name: "width", label: "Room width", type: "number", unit: "ft", value: 12, min: 1, max: 200, step: 0.5 },
         { name: "height", label: "Wall height", type: "number", unit: "ft", value: 8, min: 6, max: 20, step: 0.5 },
         { name: "openings", label: "Window &amp; door area", type: "number", unit: "sq ft", value: 50, min: 0, max: 2000, step: 5 },
-        { name: "ceiling", label: "Cover ceiling?", type: "select", options: [ { value: yes, label: "Yes" }, { value: no, label: "No" } ] },
+        { name: "ceiling", label: "Cover ceiling?", type: "select", options: [ { value: "yes", label: "Yes" }, { value: "no", label: "No" } ] },
         { name: "sheet", label: "Sheet size", type: "select", options: [ { value: 32, label: "4x8 (32 sq ft)" }, { value: 36, label: "4x9 (36 sq ft)" }, { value: 40, label: "4x10 (40 sq ft)" }, { value: 48, label: "4x12 (48 sq ft)" } ] }
       ],
       compute: function (v) {
