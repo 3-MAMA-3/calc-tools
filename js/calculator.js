@@ -172,7 +172,7 @@
       var alt = t.querySelector(".alt");
       if (alt) alt.textContent = copiedTxt;
       t.classList.add("copied");
-      setTimeout(function () { t.classList.remove("copied"); }, 1600);
+      setTimeout(function () { t.classList.remove("copied"); }, 3000);
     }
   });
 })();
