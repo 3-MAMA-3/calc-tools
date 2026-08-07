@@ -176,8 +176,8 @@
   }
   document.addEventListener("click", function (e) {
     var t = e.target;
-    while (t && !t.classList) t = t.parentNode;
-    if (t && t.classList.contains("copy-url") && shareEl) {
+    while (t && !(t.classList && t.classList.contains("copy-url"))) t = t.parentNode;
+    if (t && shareEl) {
       shareEl.select();
       document.execCommand("copy");
       var copiedTxt = (T ? T.t("share.copied") : "Copied!").replace(/^[!¡]+|[!¡]+$/g, "");
