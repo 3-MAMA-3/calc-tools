@@ -162,6 +162,7 @@
     });
   }
 
+  var copyTimer = null;
   document.addEventListener("click", function (e) {
     var t = e.target;
     while (t && !t.classList) t = t.parentNode;
@@ -172,7 +173,8 @@
       var alt = t.querySelector(".alt");
       if (alt) alt.textContent = copiedTxt;
       t.classList.add("copied");
-      setTimeout(function () { t.classList.remove("copied"); }, 3000);
+      if (copyTimer !== null) clearTimeout(copyTimer);
+      copyTimer = setTimeout(function () { t.classList.remove("copied"); }, 3000);
     }
   });
 })();
