@@ -13,5 +13,6 @@ Free home improvement material calculators, auto-generated and auto-deployed eve
 
 ## Monetization
 
-- Ad slots + affiliate boxes are pre-wired into every page template (see `css/style.css` `.ad-slot`)
+- Ad slots are gated in `js/ads.js`: set `var CLIENT = "your-numeric-id";` to enable AdSense on all pages (slots stay hidden until then)
+- Affiliate boxes are pre-wired into every page template (see `css/style.css` `.ad-slot`)
 - `ads.txt` is ready for AdSense verification

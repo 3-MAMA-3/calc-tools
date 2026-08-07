@@ -479,3 +479,17 @@ footer.site .foot-bottom {
   .result .note { text-align: left; }
   .hero h1 { font-size: 2rem; }
 }
+
+/* ---------- Print ---------- */
+@media print {
+  header.site, footer.site, nav.site, .ad-slot, .share-row, #theme-toggle,
+  #lang-select, #unit-select, #print-btn, .hero, .howto, .faq, .related,
+  #saved-msg { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .card, .result, .result-box { box-shadow: none !important; border: none !important; background: #fff !important; }
+  .card { padding: 0 !important; }
+  .wrap { padding: 0 !important; max-width: 100% !important; }
+  .result { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+  input[type="number"], select { border-color: #999 !important; background: #fff !important; color: #000 !important; }
+  a { color: #000 !important; }
+}

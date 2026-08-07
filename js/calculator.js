@@ -24,6 +24,13 @@
   var NUM_UNIT_RE = /(\d+(?:\.\d+)?)\s*(sq ft\/gal|sq ft per box|sq ft|sq yd|cu ft|cu yd|linear ft|bd ft|gallons|lb|tons|inches|inch|ft|quart)\b/g;
   var NOTE_SWAPS = { "nearest quart": "nearest litre", "nearest half gallon": "nearest 2 L" };
   var LABEL_SWAPS = { "Bricks per sq ft": "Bricks per m²" };
+  var OPTION_SWAPS = {
+    "4x8x16 in block": "10x20x40 cm block",
+    "6x8x16 in block": "15x20x40 cm block",
+    "8x8x16 in block": "20x20x40 cm block"
+  };
+  var SAVE_KEY = "hc_saved";
+  var saveTimer = null;
 
   function isMetric() {
     return window.HC_UNITS && window.HC_UNITS.get() === "metric";
@@ -56,7 +63,11 @@
   }
   function convertText(s) {
     if (!isMetric() || !s) return s;
-    var out = s.replace(NUM_UNIT_RE, function (m, num, u) {
+    var out = s;
+    for (var p in OPTION_SWAPS) {
+      if (out.indexOf(p) !== -1) out = out.split(p).join(OPTION_SWAPS[p]);
+    }
+    out = out.replace(NUM_UNIT_RE, function (m, num, u) {
       var n = parseFloat(num);
       var f, label;
       if (u === "quart") { f = 0.946352946; label = "L"; }
@@ -88,6 +99,46 @@
   }
   function numStr(v) {
     return typeof v === "number" && isFinite(v) ? round4(v) : v;
+  }
+
+  function pageSlug() {
+    var m = window.location.pathname.match(/([^\/]+)\.html$/);
+    return m ? m[1] : "page";
+  }
+  function loadSaved() {
+    try {
+      var all = JSON.parse(localStorage.getItem(SAVE_KEY) || "{}");
+      return all[pageSlug()] || {};
+    } catch (e) { return {}; }
+  }
+  function persistSaved() {
+    var data = {};
+    C.fields.forEach(function (f) {
+      var v = readValue(f);
+      data[f.name] = v === null || v === "" ? "" : numStr(toUs(v, f.unit));
+    });
+    var all = {};
+    try {
+      all = JSON.parse(localStorage.getItem(SAVE_KEY) || "{}");
+    } catch (e) {}
+    all[pageSlug()] = data;
+    try { localStorage.setItem(SAVE_KEY, JSON.stringify(all)); } catch (e) {}
+  }
+  function scheduleSave() {
+    if (saveTimer !== null) clearTimeout(saveTimer);
+    saveTimer = setTimeout(persistSaved, 400);
+  }
+  function restoreSaved() {
+    var params = new URLSearchParams(window.location.search);
+    var saved = loadSaved();
+    C.fields.forEach(function (f) {
+      var el = document.getElementById("f-" + f.name);
+      if (!el || params.has(f.name)) return;
+      var v = saved[f.name];
+      if (v !== undefined && v !== null && v !== "") {
+        el.value = numStr(fromUs(v, f.unit));
+      }
+    });
   }
 
   function tr(s, cat) { return T ? T.map(s, cat) : s; }
@@ -212,11 +263,15 @@
         input.step = f.step !== undefined ? numStr(fromUs(f.step, f.unit)) : "any";
         input.min = f.min !== undefined ? numStr(fromUs(f.min, f.unit)) : 0;
         input.max = f.max !== undefined ? numStr(fromUs(f.max, f.unit)) : 999999;
-        input.value = f.value !== undefined ? numStr(fromUs(f.value, f.unit)) : "";
+        if (f.value !== undefined) {
+          var ph = fromUs(f.value, f.unit);
+          ph = typeof ph === "number" && isFinite(ph) ? String(Math.round(ph * 10) / 10) : ph;
+          input.placeholder = ((T && T.t("input.placeholder")) || "e.g.") + " " + ph;
+        }
       }
       input.id = "f-" + f.name;
-      input.addEventListener("input", compute);
-      input.addEventListener("change", compute);
+      input.addEventListener("input", function () { compute(); scheduleSave(); });
+      input.addEventListener("change", function () { compute(); scheduleSave(); });
       row.appendChild(input);
       if (f.unit) {
         var u = document.createElement("span");
@@ -257,7 +312,10 @@
 
   buildForm();
   applyParams();
+  restoreSaved();
   compute();
+
+  window.addEventListener("beforeunload", persistSaved);
 
   if (T) {
     document.addEventListener("i18n:changed", function () { rebuild(false); });

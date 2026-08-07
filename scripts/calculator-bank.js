@@ -638,4 +638,89 @@ return [
       { slug: "flooring-calculator", title: "Flooring Calculator", tag: "Floor to match the walls" }
     ]
   },
+  {
+    slug: "roofing-calculator",
+    metaTitle: "Roofing Calculator - How Many Shingle Bundles & Squares Do I Need?",
+    description: "Free roofing calculator: estimate the sloped roof area in squares and the number of shingle bundles for any gable roof, including waste allowance.",
+    h1: "Roofing Calculator",
+    lead: "Work out the roof area and how many squares and bundles of shingles to order - just enter the footprint of the house and the roof pitch.",
+    toolName: "roofing calculator",
+    howto: [
+      "Measure the length of the house along the ridge and the width from eave to eave in feet. That footprint is the flat area your roof covers; the pitch factor below adjusts it to the true sloped surface.",
+      "Pick the roof pitch: 3/12 (a gentle slope) adds about 3% to the area, 6/12 about 12%, 9/12 about 25%, and 12/12 (a steep 45-degree roof) a full 41% more.",
+      "Roofing is sold in squares of 100 sq ft and bundles - three bundles cover one square. Add 5% waste on a simple roof, or 10% when there are valleys, hips and edges to cut."
+    ],
+    fields: [
+      { name: "length", label: "Roof length", type: "number", unit: "ft", value: 40, min: 5, max: 500, step: 0.5 },
+      { name: "width", label: "Roof width", type: "number", unit: "ft", value: 30, min: 5, max: 300, step: 0.5 },
+      { name: "pitch", label: "Roof pitch", type: "select", options: [ { value: 1.031, label: "3/12 (low slope)" }, { value: 1.118, label: "6/12 (medium)" }, { value: 1.25, label: "9/12 (steep)" }, { value: 1.414, label: "12/12 (high)" } ] },
+      { name: "waste", label: "Waste allowance", type: "select", options: [ { value: 5, label: "5% (simple roof)" }, { value: 10, label: "10% (valleys and hips)" } ] }
+    ],
+    computeJs: `var flat = v.length * v.width;
+        var sloped = flat * v.pitch;
+        var withWaste = sloped * (1 + v.waste / 100);
+        var squares = withWaste / 100;
+        return [
+          { label: "Footprint area", value: flat, unit: "sq ft" },
+          { label: "Sloped roof area", value: sloped, unit: "sq ft" },
+          { label: "Roofing squares", value: Math.ceil(squares * 10) / 10, unit: "squares", note: "100 sq ft per square" },
+          { label: "Bundles needed", value: Math.ceil(squares * 3), unit: "bundles", note: v.waste + "% waste" }
+        ];`,
+    faqs: [
+      { q: "How many bundles of shingles are in a square?", a: "Three bundles typically cover one square (100 sq ft) of 3-tab or architectural shingles. Heavier luxury shingles come four bundles to a square - check the bundle label for its exact coverage." },
+      { q: "How do I measure the pitch of my roof?", a: "Hold a level at 12 inches along the roof surface, measure straight down to the roof at that point - that vertical rise is your pitch. A 6-inch rise is a 6/12 pitch. On steep or high roofs, estimate from a photo of the gable end instead." },
+      { q: "How much does a square of shingles cost?", a: "Three-tab shingles cost roughly $90-$110 per square and architectural shingles $120-$200 per square in the US (2025-2026), installed labor adds about the same again. Most roofers quote per square." }
+    ],
+    affiliate: [
+      "Architectural shingles by the bundle",
+      "Roofing underlayment and drip edge",
+      "Roofing nailer and tear-off tools"
+    ],
+    related: [
+      { slug: "lumber-calculator", title: "Board Foot Calculator", tag: "Sheathing and rafters" },
+      { slug: "concrete-calculator", title: "Concrete Calculator", tag: "Footings and chimney repairs" },
+      { slug: "paint-calculator", title: "Paint Calculator", tag: "Exterior paint while you're up there" }
+    ]
+  },
+  {
+    slug: "retaining-wall-calculator",
+    metaTitle: "Retaining Wall Calculator - How Many Blocks Do I Need?",
+    description: "Free retaining wall calculator: estimate how many concrete blocks you need for any wall length and height, with waste for curves and corners.",
+    h1: "Retaining Wall Calculator",
+    lead: "Find out how many concrete blocks you need for a retaining wall - enter the wall length and height and pick your block size.",
+    toolName: "retaining wall calculator",
+    howto: [
+      "Measure the length of the wall and the planned height in feet. For a wall taller than 4 feet, you should have a structural engineer check the design - most building codes require it.",
+      "Pick your block size. The face area per block determines the count: a standard 8x16 in block covers 0.89 sq ft of wall face, a 6x16 in block 0.67 sq ft, and a 4x16 in block 0.44 sq ft (including mortar joints).",
+      "Add 5% waste for a straight wall, or 10% if there are curves or corners to cut. Order caps separately - one cap block per foot of wall length for most styles."
+    ],
+    fields: [
+      { name: "length", label: "Wall length", type: "number", unit: "ft", value: 40, min: 1, max: 1000, step: 0.5 },
+      { name: "height", label: "Wall height", type: "number", unit: "ft", value: 3, min: 1, max: 20, step: 0.5 },
+      { name: "block", label: "Block size", type: "select", options: [ { value: 0.444, label: "4x8x16 in block" }, { value: 0.667, label: "6x8x16 in block" }, { value: 0.889, label: "8x8x16 in block" } ] },
+      { name: "waste", label: "Waste allowance", type: "select", options: [ { value: 5, label: "5% (straight wall)" }, { value: 10, label: "10% (curves and corners)" } ] }
+    ],
+    computeJs: `var area = v.length * v.height;
+        var blocks = Math.ceil(area / v.block * (1 + v.waste / 100));
+        return [
+          { label: "Wall face area", value: area, unit: "sq ft" },
+          { label: "Blocks needed", value: blocks, unit: "blocks", note: v.waste + "% waste" },
+          { label: "Rows of blocks", value: Math.ceil(v.height * 12 / 8), unit: "rows" }
+        ];`,
+    faqs: [
+      { q: "How many blocks do I need for a 50-foot wall?", a: "A 50 ft long, 3 ft high wall has 150 sq ft of face area. With standard 8x16 in blocks (0.89 sq ft each) and 5% waste, that is about 177 blocks - roughly 9 rows of 20." },
+      { q: "How tall can a retaining wall be without engineering?", a: "Most codes allow up to 3-4 feet (the height of one or two block courses plus footing) without an engineer. Above that, walls are typically designed with geogrid reinforcement, deeper footings and drainage." },
+      { q: "Do retaining walls need drainage?", a: "Yes - install a gravel base and perforated pipe behind the wall, or water pressure will push it over. Plan about 1-1.5 tons of drain gravel per 10 feet of wall length for a 3-foot wall." }
+    ],
+    affiliate: [
+      "Retaining wall blocks and caps",
+      "Drainage gravel and landscape fabric",
+      "Wall anchors and geogrid"
+    ],
+    related: [
+      { slug: "gravel-calculator", title: "Gravel Calculator", tag: "Drainage and base gravel" },
+      { slug: "concrete-calculator", title: "Concrete Calculator", tag: "Footing and mortar" },
+      { slug: "brick-calculator", title: "Brick Calculator", tag: "Facing brick walls" }
+    ]
+  },
 ];

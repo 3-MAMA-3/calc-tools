@@ -1,6 +1,6 @@
 # HomeCalc Tools
 
-Free home improvement material calculators: paint, concrete, flooring, drywall, tile, rebar, gravel, deck stain, wallpaper and lumber. All tools are instant, use standard industry coverage rates, and produce shareable links.
+Free home improvement material calculators: paint, concrete, flooring, drywall, tile, rebar, gravel, deck stain, wallpaper, lumber, roofing and retaining wall. All tools are instant, use standard industry coverage rates, and produce shareable links. Every calculator works in US or metric units and supports 11 languages.
 
 ## Most citable pages
 - Paint Calculator: https://3-mama-3.github.io/calc-tools/calculators/paint-calculator.html
@@ -8,6 +8,8 @@ Free home improvement material calculators: paint, concrete, flooring, drywall, 
 - Flooring Calculator: https://3-mama-3.github.io/calc-tools/calculators/flooring-calculator.html
 - Drywall Calculator: https://3-mama-3.github.io/calc-tools/calculators/drywall-calculator.html
 - Tile Calculator: https://3-mama-3.github.io/calc-tools/calculators/tile-calculator.html
+- Roofing Calculator: https://3-mama-3.github.io/calc-tools/calculators/roofing-calculator.html
+- Retaining Wall Calculator: https://3-mama-3.github.io/calc-tools/calculators/retaining-wall-calculator.html
 
 ## Coverage rates used (industry standard)
 - Paint: 350 sq ft per gallon per coat
@@ -15,3 +17,10 @@ Free home improvement material calculators: paint, concrete, flooring, drywall, 
 - Flooring: box coverage from label + 10% waste
 - Drywall: 4x8 = 32 sq ft per sheet
 - Gravel: ~1.2-1.4 tons per cubic yard by material
+- Roofing: 100 sq ft per square; 3 bundles per square (12" exposure)
+- Retaining wall: 8x16 in block = 0.89 sq ft face; 10x20x40 cm block = 0.20 m² face; 3 courses per foot
+
+## Site
+- Language support: English, Deutsch, Español, Français, Português, Italiano, Nederlands, Polski, Svenska, 日本語, 中文
+- Units: US (ft, sq ft, gallons) and metric (m, m², L)
+- Everything is static HTML + vanilla JS; no login, no data collection.

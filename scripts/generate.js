@@ -121,7 +121,7 @@ function buildPage(c) {
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
       <p class="share"><span data-i18n="share.label">Shareable result link:</span></p>
-      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url"><span data-i18n="share.copy">Copy</span><span class="alt"></span></button></div>
+      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url"><span data-i18n="share.copy">Copy</span><span class="alt"></span></button><button type="button" class="btn ghost" id="print-btn" data-i18n="print.label">Print</button></div>
     </div>
 
     <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
@@ -162,9 +162,6 @@ function buildPage(c) {
 
   ${buildFooter("../")}
 
-  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-  <!-- ADSENSE END -->
   <script>window.I18N_BASE = "../";</script>
   <script src="../js/i18n/core.js"></script>
   <script src="../js/i18n/i18n.js"></script>
@@ -183,8 +180,10 @@ ${fieldsJs}
   <script src="../js/calculator.js"></script>
   <script src="../js/vendor/lenis.min.js"></script>
   <script src="../js/smooth.js"></script>
+  <script src="../js/ads.js"></script>
   <script src="../js/theme.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>document.getElementById("print-btn").addEventListener("click", function () { window.print(); });</script>
 </body>
 </html>
 `;
@@ -219,7 +218,9 @@ const SLUG_META = {
   "gravel-calculator": ["Gravel Calculator", "Tons for driveways & beds"],
   "deck-stain-calculator": ["Deck Stain Calculator", "Stain gallons for decks"],
   "wallpaper-calculator": ["Wallpaper Calculator", "Rolls for any room"],
-  "lumber-calculator": ["Board Foot Calculator", "Lumber volume & cost"]
+  "lumber-calculator": ["Board Foot Calculator", "Lumber volume & cost"],
+  "roofing-calculator": ["Roofing Calculator", "Squares & bundles for roofs"],
+  "retaining-wall-calculator": ["Retaining Wall Calculator", "Blocks for retaining walls"]
 };
 
 function rebuildIndexToolGrid(slugs) {

@@ -12,7 +12,7 @@ Everything technical is automated. Search Console is **done** (verified, sitemap
 - Sitemap `sitemap.xml` submitted (18 URLs incl. privacy + contact)
 - Indexing requested for: homepage, paint, concrete, flooring, drywall, tile
 - Privacy policy (`privacy.html`) and contact page (`contact.html`) live
-- AdSense placeholder script on every page (auto-ads, marked `<!-- ADSENSE START/END -->`)
+- Ad slots are on every page (auto-ads) — **gated off** until you set your publisher ID in `js/ads.js` (see Step 1)
 - Affiliate boxes ("Supplies for this project") on every calculator page, ready for real Amazon links
 - Weekly content automation running (Mondays 04:17 UTC) + deploy on every push
 
@@ -26,8 +26,8 @@ The site is fully prepared — this step is only about **your account**.
 2. You'll be asked for your country (**Switzerland**), full name, address and phone → enter them. No company needed — a private individual is fine.
 3. Tax info: choose **individual** → you'll fill a **W-8BEN** (US tax form) online. Keep your tax ID / AHV number handy (Swiss AHV number works as the identification number).
 4. Payout: AdSense pays by **wire transfer to your Swiss bank account** (you'll enter IBAN + BIC during setup). Add your bank in Payments settings once approved.
-5. When approved: your publisher ID (looks like `ca-pub-1234567890123456`) replaces the placeholder:
-   - In **all files** `scripts/calculator-bank.js` generated pages + `index.html`: find `ca-pub-0000000000000000` (between `<!-- ADSENSE START -->` and `<!-- ADSENSE END -->`) and replace with your ID
+5. When approved: set your publisher ID (looks like `ca-pub-1234567890123456`):
+   - In **`js/ads.js`**: replace the empty string in `var CLIENT = "";` with just the numeric part (e.g. `var CLIENT = "1234567890123456";`) — ads auto-enable on every page
    - In `ads.txt`: replace `pub-0000000000000000` with your ID's numeric part (`1234567890123456`)
    - Push → ads go live. (The ad slots are already on every page.)
 

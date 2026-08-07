@@ -41,7 +41,7 @@
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
       <p class="share"><span data-i18n="share.label">Shareable result link:</span></p>
-      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url"><span data-i18n="share.copy">Copy</span><span class="alt"></span></button></div>
+      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url"><span data-i18n="share.copy">Copy</span><span class="alt"></span></button><button type="button" class="btn ghost" id="print-btn" data-i18n="print.label">Print</button></div>
     </div>
 
     <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
@@ -112,6 +112,8 @@
             <a href="../calculators/rebar-calculator.html" data-i18n="calc.rebar-calculator.h1">Rebar Calculator</a>
             <a href="../calculators/tile-calculator.html" data-i18n="calc.tile-calculator.h1">Tile Calculator</a>
             <a href="../calculators/wallpaper-calculator.html" data-i18n="calc.wallpaper-calculator.h1">Wallpaper Calculator</a>
+            <a href="../calculators/roofing-calculator.html" data-i18n="calc.roofing-calculator.h1">Roofing Calculator</a>
+            <a href="../calculators/retaining-wall-calculator.html" data-i18n="calc.retaining-wall-calculator.h1">Retaining Wall Calculator</a>
           </div>
         </div>
         <div class="foot-col">
@@ -131,9 +133,6 @@
     </div>
   </footer>
 
-  <!-- ADSENSE START: replace ca-pub-0000000000000000 with your publisher ID after approval -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-  <!-- ADSENSE END -->
   <script>window.I18N_BASE = "../";</script>
   <script src="../js/i18n/core.js"></script>
   <script src="../js/i18n/i18n.js"></script>
@@ -164,7 +163,9 @@ return [
   <script src="../js/calculator.js"></script>
   <script src="../js/vendor/lenis.min.js"></script>
   <script src="../js/smooth.js"></script>
+  <script src="../js/ads.js"></script>
   <script src="../js/theme.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>document.getElementById("print-btn").addEventListener("click", function () { window.print(); });</script>
 </body>
 </html>
