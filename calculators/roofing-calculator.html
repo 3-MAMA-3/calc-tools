@@ -41,7 +41,7 @@
       <form id="calc-form"></form>
       <div id="results" class="results"></div>
       <p class="share"><span data-i18n="share.label">Shareable result link:</span></p>
-      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url"><span data-i18n="share.copy">Copy</span><span class="alt"></span></button><button type="button" class="btn ghost" id="print-btn" data-i18n="print.label">Print</button></div>
+      <div class="share-row"><input id="share-url" readonly onclick="this.select()"><button type="button" class="btn ghost copy-url"><span data-i18n="share.copy">Copy</span><span class="alt"></span></button><button type="button" class="btn ghost" id="print-btn" data-i18n="print.label" onclick="window.print()">Print</button></div>
     </div>
 
     <div class="ad-slot" data-i18n="ad.label">Advertisement</div>
@@ -167,6 +167,5 @@
   <script src="../js/ads.js"></script>
   <script src="../js/theme.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script>document.getElementById("print-btn").addEventListener("click", function () { window.print(); });</script>
 </body>
 </html>

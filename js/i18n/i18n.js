@@ -4,6 +4,9 @@
   var SUPPORTED = Object.keys(window.I18N_CORE.langs);
   var current = "en";
   var loaded = {};
+  var attempts = {};
+  var FILE_VERSION = "2";
+  var MAX_ATTEMPTS = 3;
 
   function detect() {
     var saved = null;
@@ -78,15 +81,32 @@
 
   function loadContent(lang, done) {
     if (lang === "en" || loaded[lang]) { done(); return; }
+    if (!attempts[lang]) attempts[lang] = 0;
+    if (attempts[lang] >= MAX_ATTEMPTS) {
+      failoverToEn();
+      done();
+      return;
+    }
+    attempts[lang]++;
     var s = document.createElement("script");
-    s.src = (window.I18N_BASE || "") + "js/i18n/" + lang + ".js";
+    s.src = (window.I18N_BASE || "") + "js/i18n/" + lang + ".js?v=" + FILE_VERSION;
     s.onload = function () { loaded[lang] = true; done(); };
-    s.onerror = function () { loaded[lang] = true; done(); };
+    s.onerror = function () {
+      setTimeout(function () { loadContent(lang, done); }, 800);
+    };
     document.head.appendChild(s);
+  }
+
+  function failoverToEn() {
+    if (current === "en") return;
+    current = "en";
+    try { localStorage.removeItem(LS_KEY); } catch (e) {}
+    apply();
   }
 
   function setLang(lang, persist) {
     if (SUPPORTED.indexOf(lang) === -1) lang = "en";
+    attempts[lang] = 0;
     current = lang;
     if (persist) {
       try { localStorage.setItem(LS_KEY, lang); } catch (e) {}
