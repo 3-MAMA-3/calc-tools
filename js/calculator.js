@@ -163,6 +163,20 @@
   }
 
   var copyTimer = null;
+  function setCopyState(t, copied) {
+    t.classList.toggle("copied", copied);
+    if (!document.hidden) return;
+    var orig = t.querySelector("span[data-i18n]");
+    var alt = t.querySelector(".alt");
+    if (orig) {
+      orig.style.transition = "none";
+      orig.style.opacity = copied ? "0" : "1";
+    }
+    if (alt) {
+      alt.style.transition = "none";
+      alt.style.opacity = copied ? "1" : "0";
+    }
+  }
   document.addEventListener("click", function (e) {
     var t = e.target;
     while (t && !t.classList) t = t.parentNode;
@@ -172,9 +186,9 @@
       var copiedTxt = (T ? T.t("share.copied") : "Copied!").replace(/^[!¡]+|[!¡]+$/g, "");
       var alt = t.querySelector(".alt");
       if (alt) alt.textContent = copiedTxt;
-      t.classList.add("copied");
+      setCopyState(t, true);
       if (copyTimer !== null) clearTimeout(copyTimer);
-      copyTimer = setTimeout(function () { t.classList.remove("copied"); }, 3000);
+      copyTimer = setTimeout(function () { setCopyState(t, false); }, 3000);
     }
   });
 })();
